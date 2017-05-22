@@ -1,0 +1,31 @@
+<launch>  
+
+	<!-- run pointcloud_to_laserscan node -->
+	<arg name="camera" default="/pepper_robot/camera" />
+    <node pkg="uchile_pcl_to_scan" type="uchile_pcl_to_scan_node" name="pointcloud_to_laserscan">
+        <remap from="cloud_in" to="$(arg camera)/depth_registered/points"/>
+        <remap from="scan" to="$(arg camera)/scan"/>
+        <rosparam>
+            target_frame: "base_footprint" # Leave disabled to output scan in pointcloud frame
+            transform_tolerance: 0.01
+            min_height: 0.0
+            max_height: 2
+
+            angle_min: -0.6 # -35 deg
+            angle_max: 0.6 # 35 deg
+            angle_increment: 0.052 # 360pts cada 60 deg
+            scan_time: 0.3333
+            range_min: 0.45
+            range_max: 10.0
+            use_inf: true
+
+            # Concurrency level, affects number of pointclouds queued for processing and number of threads used
+            # 0 : Detect number of cores
+            # 1 : Single threaded
+            # 2->inf : Parallelism level
+            concurrency_level: 1
+        </rosparam>
+
+    </node>
+
+</launch>

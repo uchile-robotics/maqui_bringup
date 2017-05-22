@@ -1,0 +1,32 @@
+<launch>
+
+	<arg name="nao_ip"     default="192.168.1.126"/>
+	<arg name="roscore_ip" default="192.168.1.105"/>
+
+	<!-- core connection -->
+	<include file="$(find pepper_bringup)/launch/pepper_full.launch">
+		<arg name="nao_ip"     value="$(arg nao_ip)"/>
+		<arg name="roscore_ip" value="$(arg roscore_ip)"/>
+		<arg name="network_interface" value="wlan0"/>
+	</include>
+
+	<!-- TODO> arg> fake localization: map server + odom + set inicial pose -->
+	<!-- fake localization -->
+	<!-- <include file="$(find maqui_bringup)/launch/odom.launch"/> -->
+
+	<!-- static map server -->
+	<!--
+ 	<include file="$(find bender_maps)/launch/map_server.launch">
+		<arg name="map_name" value="map"/>
+	</include>
+ 	-->	
+
+ 	<include file="$(find maqui_bringup)/launch/pcl_to_scan.launch"/>
+
+	<include file="$(find maqui_joy)/launch/joysticks.launch"/> 
+	
+	<include file="$(find nao_apps)/launch/speech.launch">
+		<arg name="nao_ip"     value="$(arg nao_ip)"/>
+	</include>	
+
+</launch>

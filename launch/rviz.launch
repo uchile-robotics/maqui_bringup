@@ -1,0 +1,9 @@
+<launch>
+
+	<arg name="respawn" default="false"/>
+
+	<!-- RVIZ -->
+	<node name="$(anon rviz)" pkg="rviz" type="rviz"
+	 respawn="$(arg respawn)" output="screen" args="-d $(find maqui_bringup)/config/rviz/common.rviz"/>
+
+</launch>
