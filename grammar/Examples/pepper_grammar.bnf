@@ -10,6 +10,15 @@ sentence ::= vocative courtesy complex_expression | noise noise noise
 
 
 
+
+
+
+
+
+
+
+
+
 <actions> ::= <find_person_in_place> | <find_object_in_place> | <grasp_object_from_place> | <tell_something> | <go_place> | <answer_question> | <complex_actions> | <follow_person_from_place>
 
 <double_actions> ::= <find_person_and_guide> | <grasp_and_deliver> | <find_person_and_follow> | <go_place_and_find> 

@@ -9,8 +9,6 @@
 
 <_females_names> : hanna | barbara | samantha | erika |sophie | jackie | samantha | skyler |charlie;
 
-<_response> : i want [<_a_the>]
-
-<_a_the> : a | the | an ;
+<_response> : my name is;
 <_vocative> : robot | pepper | maqui;
 <_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
