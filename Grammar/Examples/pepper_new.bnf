@@ -1,0 +1,135 @@
+!grammar gpsr;
+!start <_main_>;
+<_main_> :  [<_vocative>] [<_courtesy>] <_complex_expression> ;
+
+<_complex_expression> : <_complex_1> | <_complex_2> | <_complex_3> | <_complex_4>;
+
+<_complex_1> : <_actions> [[and]<_actions>] [[and]<_actions>] ;
+<_complex_2> : <_actions> [and] <_double_actions>  ;
+<_complex_3> : <_double_actions> [and <_actions>] ;
+<_complex_4> : <_triple_actions> ;
+
+
+
+
+
+
+
+
+
+
+
+
+<_actions> : <_find_person_in_place> | <_find_object_in_place> | <_grasp_object_from_place> | <_tell_something> | <_go_place> | <_answer_question> | <_complex_actions> | <_follow_person_from_place>;
+
+<_double_actions> : <_find_person_and_guide> | <_grasp_and_deliver> | <_find_person_and_follow> | <_go_place_and_find> ;
+
+
+<_triple_actions> : <_grasp_and_deliver_to_person> and <_follow_her> | <_grasp_and_deliver_to_person> and <_guide_her_to_place>;
+
+<_complex_actions> : <_guide_person_from_place_to_place> ;
+
+<_find_person_and_guide> : <_find_person_in_place> [and] <_guide_her_to_place> ;
+<_find_person_and_follow> : <_find_person_in_place> [and] <_follow_her> ;
+
+<_grasp_and_deliver> : <_grasp_and_deliver_to_place> | <_grasp_and_deliver_to_person> ;
+<_grasp_and_deliver_to_place> : <_grasp_object_from_place> [and] <_put_it_in_place> ;
+<_grasp_and_deliver_to_person> : <_grasp_object_from_place> [and] <_give_it_expression> ;
+
+<_give_it_expression> : <_give_it_to_person_in_place> | <_give_it> to me;
+
+
+
+
+
+<_courtesy> : [could you] [please] ;
+<_vocative> : robot | bender ;
+
+<_find_person> : <_find> <_person> ;
+<_find_person_in_place> : <_find_person> in [the] <_place> ;
+<_find_object> : <_find> <_object> ;
+<_find_object_in_place> : <_find_object> in [the] <_location> ;
+
+<_go_place_and_find> : <_go_place> <_find_person> ;
+
+
+<_go_place> : <_go> to the <_position> ;
+
+<_position> : <_place> | <_location>;
+
+<_grasp_object> : <_grasp> [the] <_object>;
+<_grasp_object_from_place> : <_grasp_object> from [the] <_location>  ;
+
+<_give_object> : <_give> <_object> ;
+<_give_it> : <_give> it ;
+<_give_it_to_person> : <_give_it> to <_person>;
+<_give_it_to_person_in_place> : <_give_it_to_person> in [the] <_place> ;
+<_give_object_to_person> : <_give_object> to <_person> ;
+<_give_object_to_person_in_place> : <_give_object_to_person> in [the] <_place>;
+
+<_follow_her> : <_follow> him|her ;
+<_follow_person> : <_follow> <_person> ;
+<_follow_person_from_place> : <_follow_person> <_location_adverbs> [the] <_place> ;
+
+<_location_adverbs> : from | who is in | who is at ;
+
+<_put_object> : <_put> [a] <_object> ;
+<_put_it_in_place> : <_put> it on [the] <_position> ;
+<_put_object_in_place> : <_put_object> on [the] <_position> ;
+
+<_answer_question> : <_answer> [a] <_question> ;
+<_tell_something> : <_tell> <_something_to_tell> ;
+
+<_guide_him_or_her> : <_guide> him | <_guide> her ;
+<_guide_her_to_place> : <_guide_him_or_her> to [the] <_place>  ;
+<_guide_person> : <_guide> <_person> ;
+<_guide_person_to_place> : <_guide_person> to [the] <_place> ;
+<_guide_person_from_place> : <_guide_person> <_location_adverbs> [the] <_place> ;
+<_guide_person_from_place_to_place> : <_guide_person_from_place> to [the] <_place>  ;
+
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
+
+
+
+
+
+<_location> : kitchen table | dining table | tv stand |shelf ;
+
+<_place> : kitchen | hall | living room | corridor | bedroom ;
+
+
+<_object> :  water | beer |sponge | toilet paper | pringles | tea ;
+
+
+<_category_object> :  drink | food | objects ;
+
+<_go> : go | navigate ;
+
+<_grasp> : grasp | get | grab | take | pick up ;
+
+<_give> : bring | carry | deliver | return | transport | give ;
+
+<_find> : find | look for| search ;
+
+<_put> : put | leave | place ;
+
+<_tell> : say | tell ;
+
+<_ask> : ask | request ;
+
+<_answer> : answer ;
+
+<_question> : question ;
+
+<_person> : sophia | daniel | <_gesture_person> | isabella | james ;
+
+<_gesture_person> : the <_gesture> person  ;
+
+<_gesture> : waving  ;
+
+<_something_to_tell> : the day of the week | the time | something about yourself | your name | a joke | what day is tomorrow ;
+
+<_follow> : follow  ;
+
+<_guide> : guide | take  ;
+

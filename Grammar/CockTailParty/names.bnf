@@ -1,0 +1,16 @@
+!grammar names;
+!start <_main_>;
+
+<_main_> : [<_response>] <_names>;
+
+<_names> : <_males_names> | <_females_names>;
+
+<_males_names> : ken | erik | samuel | brian | thomas | edward | michael | charlie | alex;
+
+<_females_names> : hanna | barbara | samantha | erika |sophie | jackie | samantha | skyler |charlie;
+
+<_response> : i want [<_a_the>]
+
+<_a_the> : a | the | an ;
+<_vocative> : robot | pepper | maqui;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;

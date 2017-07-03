@@ -1,0 +1,4 @@
+﻿!grammar cdd;
+!start <_main_>;
+<_main_> : !repeat (<_digits>, 1, *);
+<_digits> : yes | one | three | cat | dog | go to the kitchen;

@@ -1,11 +1,11 @@
 <launch>
 
-	<arg name="nao_ip"     default="192.168.1.126"/>
-	<arg name="roscore_ip" default="192.168.1.105"/>
+	<arg name="maqui_ip"     default="192.168.1.126"/>
+	<arg name="roscore_ip" default="127.0.0.1"/>
 
 	<!-- core connection -->
 	<include file="$(find pepper_bringup)/launch/pepper_full.launch">
-		<arg name="nao_ip"     value="$(arg nao_ip)"/>
+		<arg name="nao_ip"     value="$(arg maqui_ip)"/>
 		<arg name="roscore_ip" value="$(arg roscore_ip)"/>
 		<arg name="network_interface" value="wlan0"/>
 	</include>
@@ -25,8 +25,8 @@
 
 	<include file="$(find maqui_joy)/launch/joysticks.launch"/> 
 	
-	<include file="$(find nao_apps)/launch/speech.launch">
-		<arg name="nao_ip"     value="$(arg nao_ip)"/>
+<!-- 	<include file="$(find nao_apps)/launch/speech.launch">
+		<arg name="nao_ip"     value="$(arg maqui_ip)"/>
 	</include>	
-
+ -->
 </launch>

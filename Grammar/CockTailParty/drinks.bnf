@@ -1,0 +1,7 @@
+!grammar drinks;
+!start <_main_>;
+
+<_main_> : <_drinks>;
+<_drinks> : tea | beer | coke | sake | greentea | papaya milk | pure milk | water | orangejuice | beer | coke | sprite | baltica;
+<_vocative> : robot | pepper | maqui;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
