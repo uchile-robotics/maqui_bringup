@@ -1,6 +1,6 @@
 <launch>
 
-	<arg name="maqui_ip"     default="192.168.1.126"/>
+	<arg name="maqui_ip"   default="192.168.1.126"/>
 	<arg name="roscore_ip" default="127.0.0.1"/>
 
 	<!-- core connection -->
@@ -15,18 +15,20 @@
 	<!-- <include file="$(find maqui_bringup)/launch/odom.launch"/> -->
 
 	<!-- static map server -->
-	<!--
- 	<include file="$(find bender_maps)/launch/map_server.launch">
+ 	<include file="$(find uchile_maps)/launch/map_server.launch">
 		<arg name="map_name" value="map"/>
 	</include>
- 	-->	
+ 		
 
- 	<include file="$(find maqui_bringup)/launch/pcl_to_scan.launch"/>
+	<!-- THIS was intended to localize using RGBD, but that requires a new map -->
+ 	<!-- <include file="$(find maqui_bringup)/launch/tools/pcl_to_scan.launch"/> -->
 
 	<include file="$(find maqui_joy)/launch/joysticks.launch"/> 
 	
-<!-- 	<include file="$(find nao_apps)/launch/speech.launch">
-		<arg name="nao_ip"     value="$(arg maqui_ip)"/>
-	</include>	
- -->
+	<!-- 	
+		<include file="$(find nao_apps)/launch/speech.launch">
+			<arg name="nao_ip"     value="$(arg maqui_ip)"/>
+		</include>	
+	 -->
+
 </launch>
