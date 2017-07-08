@@ -1,0 +1,23 @@
+<launch>
+
+	<arg name="slam" default="false"/>
+
+	<!-- gmapping para slam-->
+	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" respawn="false" ns="/maqui/nav/">
+
+		<!-- Parameters -->
+		<rosparam file="$(find maqui_nav)/config/gmapping/gmapping.yaml" command="load"/>
+
+		<!-- mapping range -->
+		<!-- MODIFY THIS... NOT EVEN TRIED! -->
+		<param name="maxUrange" type="double" value="2" if="$(arg slam)"/>
+		<param name="maxRange"  type="double" value="3" if="$(arg slam)"/>
+
+		<!-- Remappings-->
+		<remap from="scan" to="/maqui/sensors/laser_front/scan_filtered"/>
+		<remap from="map" to="/map"/>
+		<remap from="map_metadata" to="/map_metadata"/>
+		
+	</node>
+
+</launch>
