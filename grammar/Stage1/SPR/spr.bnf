@@ -96,7 +96,7 @@
 
 <_manipulationplace> : [<_side>] bedside [table] | living shelf | TV stand | living table | center table  | drawer | desk | bar | cupboard | sink | sideshelf | bookcase | dinning table | fridge | counter | cabinet  | couch table | dinner table | kitchen counter | kitchen table | table ;  
 
-<_bigobject>: sofa | bed | shelf | chairs | table | plant  <_manipulationplace>;
+<_bigobject>: sofa | bed | shelf | chairs | plant  <_manipulationplace>;
 
 <_category_object> :  snacks | candies | food | drinks | toiletries | containers |objects;
 
