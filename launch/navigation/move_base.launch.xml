@@ -20,21 +20,25 @@
 	<node pkg="move_base" type="move_base" respawn="true" name="move_base" output="screen" ns="/maqui/nav/">
 
 		<!-- general parameters -->
-		<rosparam file="$(find maqui_nav)/config/move_base/move_base.yaml" command="load"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/move_base.yaml" command="load"/>
 
 		<!-- costmap parameters -->
-		<rosparam file="$(find maqui_nav)/config/move_base/costmap_common.yaml" command="load" ns="global_costmap"/>
-		<rosparam file="$(find maqui_nav)/config/move_base/costmap_common.yaml" command="load" ns="local_costmap"/>
-		<rosparam file="$(find maqui_nav)/config/move_base/global_costmap.yaml" command="load"/>
-		<rosparam file="$(find maqui_nav)/config/move_base/local_costmap.yaml"  command="load"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/common.yaml" command="load" ns="global_costmap"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/global.yaml" command="load" ns="global_costmap"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/common.yaml" command="load" ns="local_costmap"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/local.yaml"  command="load" ns="local_costmap"/>
 		
 		<!-- rewrite  observation_sources when use_rgbd is set to true -->
-		<param name="global_costmap/observation_sources" value="laser_front_sensor laser_rear_sensor rgbd_head_scan_sensor" if="$(arg use_rgbd)"/>
-		<param name="local_costmap/observation_sources" value="laser_front_sensor laser_rear_sensor rgbd_head_scan_sensor" if="$(arg use_rgbd)"/>
+		<param if="$(arg use_rgbd)"
+			name="global_costmap/obstacle_layer/observation_sources"
+			value="laser_sensor rgbd_scan_sensor"/>
+		<param if="$(arg use_rgbd)"
+			name="local_costmap/obstacle_layer/observation_sources" 
+			value="laser_sensor rgbd_scan_sensor"/>
 
 		<!-- planner parameters -->
-		<rosparam file="$(find maqui_nav)/config/move_base/planner/$(arg global_planner).yaml" command="load"/>
-		<rosparam file="$(find maqui_nav)/config/move_base/planner/$(arg local_planner).yaml" command="load"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/planner/$(arg global_planner).yaml" command="load"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/planner/$(arg local_planner).yaml" command="load"/>
 
 		<!-- slam specific configuration -->
 		<!-- this will set up an extra dummy parameter for one of the global planners -->
@@ -42,8 +46,7 @@
 		<param name="GlobalPlanner/allow_unknown" value="true" if="$(arg slam)"/>
 
 		<!-- remapping -->
-		<remap from="map" to="/map"/>
-		<remap from="cmd_vel" to="move_base/cmd_vel"/>
+		<remap from="cmd_vel" to="/cmd_vel"/>
 
 	</node>
 

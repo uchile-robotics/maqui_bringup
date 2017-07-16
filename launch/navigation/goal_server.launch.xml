@@ -3,13 +3,13 @@
 	<arg name="slam" default="false"/>
 
 	<!-- Goal Server -->
-	<node pkg="maqui_nav" type="goal_server"  name="goal_server" output="screen" respawn="true" ns="/maqui/nav/">
+	<node pkg="uchile_nav" type="goal_server" name="goal_server" output="screen" respawn="true" ns="/maqui/nav/">
 		
 		<!-- load default parameters -->
-		<rosparam file="$(find maqui_nav)/config/maqui_nav/goal_server.yaml"/>
+		<rosparam file="$(find maqui_bringup)/params/navigation/goal_server.yaml"/>
 
 		<!-- correct if necessary -->
-		<param name="is_map_static" value="false"                   if="$(arg slam)"/>
+		<param name="is_map_static" value="false"                  if="$(arg slam)"/>
 		<param name="map_service"   value="/maqui/nav/dynamic_map" if="$(arg slam)"/>
 
 		<!-- remap services -->

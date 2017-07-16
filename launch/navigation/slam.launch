@@ -1,6 +1,6 @@
 <launch>
 
-	<include file="$(find maqui_nav)/launch/navigation.launch">
+	<include file="$(find maqui_bringup)/launch/navigation/navigation.launch">
 		<arg name="slam" value="true"/>
 	</include>
 

@@ -1,15 +1,28 @@
 <launch>
 
-	<node pkg="amcl" type="amcl" name="amcl" respawn="true" output="screen" ns="/maqui/nav/">
-		<remap from="scan" to="amcl/scan"/>
-		<remap from="map" to="/map"/>
-		<rosparam file="$(find maqui_bringup)/config/localization/amcl.yaml" command="load"/>
+    <arg name="map_name"  default="map"/>
+
+    <!-- static map server -->
+    <include file="$(find uchile_maps)/launch/map_server.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+    </include>
+
+    <!-- Map analyzer -->
+    <!-- <include file="$(find uchile_maps)/launch/map_analyzer.launch"/> -->
+
+    <!-- amcl -->
+    <node pkg="amcl" type="amcl" name="amcl" ns="/maqui/nav/" respawn="true" output="screen">
+        <remap from="scan" to="amcl/scan"/>
+        <remap from="map" to="/map"/>
+        <rosparam file="$(find maqui_bringup)/params/localization/amcl.yaml" command="load"/>
 	</node>
 
-	<!-- rgbd_depth -->
+    <!-- lasers relay -->
+	<node pkg="topic_tools" type="relay" name="amcl_laser_scan_relay" ns="/maqui/nav/"
+		args="/pepper_robot/laser /maqui/nav/amcl/scan"/>
+	
+	<!-- rgbd scan relay -->
 	<!-- <node pkg="topic_tools" type="relay" name="amcl_scan_front_relay" ns="/maqui/nav/" args="/pepper_robot/camera/scan /maqui/nav/amcl/scan"/> -->
 
-	<!-- laser_rear relay -->
-	<node pkg="topic_tools" type="relay" name="amcl_scan_rear_relay" ns="/maqui/nav/" args="/pepper_robot/laser /maqui/nav/amcl/scan"/>
-
 </launch>
+

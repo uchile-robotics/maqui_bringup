@@ -1,0 +1,14 @@
+<launch>
+
+	<!-- ================================================== -->
+	<!-- ==================== PARAMETERS ================== -->
+	<!-- ================================================== -->
+
+	<arg name="maqui_ip"   default="192.168.1.126"/>
+	<arg name="roscore_ip" default="127.0.0.1"/>
+
+
+	<!-- joystick --> 
+	<include file="$(find maqui_joy)/launch/joysticks.launch"/>
+
+</launch>

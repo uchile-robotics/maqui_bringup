@@ -1,23 +1,27 @@
 <launch>
 
-	<arg name="slam" default="false"/>
+    <arg name="map_name"  default="DO-NOT-USE-THIS--JUST-FOR-COMPATIBILITY"/>
 
-	<!-- gmapping para slam-->
-	<node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" respawn="false" ns="/maqui/nav/">
+    <!-- gmapping para slam-->
+    <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" ns="/bender/nav/" respawn="false">
 
-		<!-- Parameters -->
-		<rosparam file="$(find maqui_nav)/config/gmapping/gmapping.yaml" command="load"/>
+        <!-- Parameters -->
+        <rosparam file="$(find bender_bringup)/params/localization/gmapping.yaml" command="load"/>
 
-		<!-- mapping range -->
-		<!-- MODIFY THIS... NOT EVEN TRIED! -->
-		<param name="maxUrange" type="double" value="2" if="$(arg slam)"/>
-		<param name="maxRange"  type="double" value="3" if="$(arg slam)"/>
+        <!-- Slam parameters (for orange hokuyo laser!)-->
+        <param name="maxUrange" type="double" value="28"/>
+        <param name="maxRange"  type="double" value="30"/>
+        <!-- use this for black hokuyo -->
+        <!--
+            <param name="maxUrange" type="double" value="4"/>
+            <param name="maxRange" type="double" value="6"/>
+        -->
 
-		<!-- Remappings-->
-		<remap from="scan" to="/maqui/sensors/laser_front/scan_filtered"/>
-		<remap from="map" to="/map"/>
-		<remap from="map_metadata" to="/map_metadata"/>
-		
-	</node>
+        <!-- Remappings-->
+        <remap from="scan" to="/bender/sensors/laser_front/scan_filtered"/>
+        <remap from="map" to="/map"/>
+        <remap from="map_metadata" to="/map_metadata"/>
+        
+    </node>
 
 </launch>

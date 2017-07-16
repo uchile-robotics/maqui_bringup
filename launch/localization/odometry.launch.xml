@@ -1,0 +1,16 @@
+<launch>  
+
+    <arg name="map_name"  default="map"/>
+
+    <!-- static map server -->
+    <include file="$(find uchile_maps)/launch/map_server.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+    </include>
+
+    <!-- Map analyzer -->
+    <include file="$(find uchile_maps)/launch/map_analyzer.launch"/>
+
+    <!-- fake localization -->
+    <node pkg="tf" type="static_transform_publisher" name="tf_fake_localization" args="0 0 0 0 0 0 /map /odom 20" />
+
+</launch>
