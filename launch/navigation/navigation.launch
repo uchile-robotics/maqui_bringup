@@ -11,10 +11,8 @@
 	</include>
 
 	<!-- Goal Server -->
-	<!--
 	<include file="$(find maqui_bringup)/launch/navigation/goal_server.launch.xml">
 		<arg name="slam" value="$(arg slam)"/>
 	</include>
-	-->
 
 </launch>
