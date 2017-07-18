@@ -4,7 +4,7 @@
 	<!-- ==================== PARAMETERS ================== -->
 	<!-- ================================================== -->
 
-	<arg name="maqui_ip"   default="192.168.1.126"/>
+	<arg name="maqui_ip"   default="192.168.1.129"/>
 	<arg name="roscore_ip" default="127.0.0.1"/>
 
 
@@ -28,13 +28,15 @@
 	<!-- =================================================== -->
 
 	<!-- rgbd PointCloud to LaserScan projection -->
-	<!-- <include file="$(find maqui_bringup)/launch/tools/pcl_to_scan.launch"/> -->
+	<!--	
+        <include file="$(find maqui_bringup)/launch/tools/pcl_to_scan.launch"/>
+	-->	
 
 	<!-- localization  -->
-	<!-- <include file="$(find maqui_bringup)/launch/localization/localization.launch"> -->
+	<include file="$(find maqui_bringup)/launch/localization/localization.launch">
 		<!-- <arg name="type" value="odometry"> -->
-		<!-- <arg name="type" value="amcl"> -->
-	<!-- </include> -->
+		<arg name="type" value="amcl"/>
+	</include>
 
 
 	<!-- ================================== -->
