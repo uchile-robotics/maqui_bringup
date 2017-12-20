@@ -45,23 +45,26 @@ class Indicators(object):
         self.mem_pub = rospy.Publisher('/memstatus', Float32MultiArray, queue_size=10)
         #Indicators for the IP Adress
 
-        self.ip_service = session.service('NetworkInfo')
-        self.ip_adress = "Not Found"
-        self.ip_pub = rospy.Publisher('/ipstatus', String, queue_size=10)
+        #self.ip_service = session.service('NetworkInfo')
+        #self.ip_adress = "Not Found"
+        #self.ip_pub = rospy.Publisher('/ipstatus', String, queue_size=10)
 
         #Indicators for the Autonomous Status
 
-        self.autolife_service = session.service('ALAutonomousLife')
-        self.current_state = "Off"
-        self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
+        #self.autolife_service = session.service('ALAutonomousLife')
+        #self.current_state = "Off"
+        #self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
        
+        self.autolife_service = session.service('ALBasicAwareness')
+        self.current_state = "False"
+        self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
 
         self.rate = rospy.Rate(1)
               
 
     def run(self):
-        while True:
-
+        while not rospy.is_shutdown():
+            rospy.loginfo('Extracting info')
             try:
                 self.free_memory = self.mem_service.freeMemory()
                 self.total_memory = self.mem_service.totalMemory()
@@ -72,6 +75,8 @@ class Indicators(object):
                 print "Stopping..."
 
             try:
+                rospy.loginfo('Free memory ' + str(self.free_memory) )
+                rospy.loginfo('Total memory' + str(self.total_memory) )
                 self.mem= [self.free_memory, self.total_memory]
                 self.mem_pair.data = self.mem
                 self.mem_pub.publish(self.mem_pair)
@@ -81,18 +86,19 @@ class Indicators(object):
                 print "Interrupted by user"
                 print "Stopping..."
 
-            try:
-                self.ip_adress = self.ip_service.ipAdress()
-                self.ip_pub.publish(self.ip_adress)
+            #try:
+            #    self.ip_adress = self.ip_service.ipAdress()
+            #    self.ip_pub.publish(self.ip_adress)
 
-            except KeyboardInterrupt:
+            #except KeyboardInterrupt:
             
-                print "Interrupted by user"
-                print "Stopping..."
+            #    print "Interrupted by user"
+            #    print "Stopping..."
 
             try:
                 self.battery_level.data = self.battery_service.getBatteryCharge()
                 self.battery_pub.publish(self.battery_level)
+                rospy.loginfo('baterry: ' + str(self.battery_level.data) )
 
             except KeyboardInterrupt:
             
@@ -101,7 +107,7 @@ class Indicators(object):
 
             try:
                 self.hatch_status.data = self.hatch_service.getData("Device/SubDeviceList/Platform/ILS/Sensor/Value")
-                self.hatch_pub.publish(str(self.hatch_status))
+                self.hatch_pub.publish((self.hatch_status.data))
                 
             except KeyboardInterrupt:
             
@@ -109,7 +115,7 @@ class Indicators(object):
                 print "Stopping..."
                 
             try:
-                self.current_state = self.autolife_service.getState()
+                self.current_state = str(self.autolife_service.isEnabled())
                 self.autolife_pub.publish(self.current_state)
                 
             except KeyboardInterrupt:
