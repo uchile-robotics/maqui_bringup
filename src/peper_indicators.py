@@ -45,20 +45,16 @@ class Indicators(object):
         self.mem_pub = rospy.Publisher('/memstatus', Float32MultiArray, queue_size=10)
         #Indicators for the IP Adress
 
-        #self.ip_service = session.service('NetworkInfo')
-        #self.ip_adress = "Not Found"
-        #self.ip_pub = rospy.Publisher('/ipstatus', String, queue_size=10)
-
         #Indicators for the Autonomous Status
 
-        self.autolife_service = session.service('ALAutonomousLife')
+        self.autolife_service = session.service('ALBasicAwareness')
         self.current_state = "Off"
         self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
 
         #Indicators for the CPU Status
 
-        self.cpu_pub = rospy.Publisher('/cpustatus', Float32MultiArray, queue_size=10)
         self.cpu_st = Float32MultiArray()
+        self.cpu_pub = rospy.Publisher('/cpustatus', Float32MultiArray, queue_size=10)
 
         #Indicators for the Memory Status
  
@@ -87,16 +83,17 @@ class Indicators(object):
 
             try:
                 self.temp_pair = self.temp_service.getTemperatureDiagnosis()
-                self.temp_status = self.temp_pair[0]
+                
+                if self.temp_pair is not None:
+                    self.temp_status = self.temp_pair[0]
+                    s="-"
+                    self.temp_devices = s.join(self.temp_pair[1])
 
-                s="-"
-                self.temp_devices = s.join(self.temp_pair[1])
-
-                self.temp_pub_st.publish(self.temp_status)
-                self.temp_pub_dev.publish(self.temp_devices)
+                    self.temp_pub_st.publish(self.temp_status)
+                    self.temp_pub_dev.publish(self.temp_devices)
 
             except Exception as e:
-                rospy.logerr("Error getting Pepper Devices' Temperature : ", e)
+                rospy.logerr("Error getting Pepper Devices Temperature: {0}".format(e))
 
             try:
                 self.free_memory = self.mem_service.freeMemory()
@@ -107,7 +104,7 @@ class Indicators(object):
                 self.mem_pub.publish(self.mem_pair)
             
             except Exception as e:
-                rospy.logerr("Error getting Pepper Memory : ", e)
+                rospy.logerr("Error getting Pepper Memory : {0}".format(e))
 
             try:
                 self.battery_level.data = self.battery_service.getBatteryCharge()
@@ -115,45 +112,45 @@ class Indicators(object):
                 rospy.loginfo('baterry: ' + str(self.battery_level.data) )
 
             except Exception as e:
-                rospy.logerr("Error getting Pepper Battery Status : ", e)
+                rospy.logerr("Error getting Pepper Battery Status : {0}".format(e))
 
             try:
                 self.hatch_status.data = self.hatch_service.getData("Device/SubDeviceList/Platform/ILS/Sensor/Value")
                 self.hatch_pub.publish(self.hatch_status)
             except Exception as e:
-                rospy.logerr("Error getting Pepper Hatch Status: ", e)                
+                rospy.logerr("Error getting Pepper Hatch Status: {0}".format(e))                
                 
             try:
                 self.current_state = str(self.autolife_service.isEnabled())
                 self.autolife_pub.publish(self.current_state)
             except Exception as e:
-                rospy.logerr("Error getting Autonomous Life Status : ", e)
+                rospy.logerr("Error getting Autonomous Life Status : {0}".format(e))
                 
             try:
 
                 a = psutil.virtual_memory()
 
-                self.mem_st = [a.total, a.available, a.percent]
+                self.mem_st.data = [a.total, a.available, a.percent]
                 if a.percent > 90.0:
                     rospy.logwarn("Maqui Use of Memory has reached 90%")
                 self.memory_pub.publish(self.mem_st)
 
             except Exception as e:
-                rospy.logerr("Error getting Virtual Memory: ", e)
+                rospy.logerr("Error getting Virtual Memory: {0}".format(e))
 
             try:
-                self.cpu_st = psutil.cpu_percent(interval=0.0, percpu=True)
+                self.cpu_st.data = psutil.cpu_percent(interval=0.0, percpu=True)
                 self.cpu_pub.publish(self.cpu_st)
                 
             except Exception as e:
-                rospy.logerr("Error getting CPU Percent: ", e)
+                rospy.logerr("Error getting CPU Percent: {0}".format(e))
 
             try:
                 self.net_st = psutil.net_if_stats()
-                self.newtwork_pub.publish(str(self.net_st))
+                self.network_pub.publish(str(self.net_st))
                 
             except Exception as e:
-                rospy.logerr("Error getting NET Status: ", e)
+                rospy.logerr("Error getting NET Status: {0}".format(e))
 
             self.rate.sleep()
 
