@@ -70,13 +70,33 @@ class Indicators(object):
         self.network_pub = rospy.Publisher('/Networkstatus', String, queue_size=10)
         self.net_st = ""
        
+        #Indicators for the Temperature Status
 
+        self.temp_service = session.service('ALBodyTemperature')
+        self.temp_pair = []
+        self.temp_status = float
+        self.temp_devices = ""
+        self.temp_pub_st = rospy.Publisher('/tempstatus', Float32, queue_size=10)
+        self.temp_pub_dev = rospy.Publisher('/tempdevicesstatus', String, queue_size=10)
 
         self.rate = rospy.Rate(1)
               
 
     def run(self):
         while not rospy.is_shutdown():
+            
+            try:
+                self.temp_pair = self.temp_service.getTemperatureDiagnosis()
+                self.temp_status = self.temp_pair[0]
+
+                s="-"
+                self.temp_devices = s.join(self.temp_pair[1])
+
+                self.temp_pub_st.publish(self.temp_status)
+                self.temp_pub_dev.publish(self.temp_devices)
+
+            except Exception as e:
+                rospy.logerr("Error getting Pepper Devices' Temperature : ", e)
 
             try:
                 self.free_memory = self.mem_service.freeMemory()
