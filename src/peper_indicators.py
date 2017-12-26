@@ -36,7 +36,7 @@ class Indicators(object):
         self.hatch_status = Float32(0)
         self.hatch_pub = rospy.Publisher('/hatchstatus', Float32, queue_size=10)
 
-        #Indicators for the Memory
+        #Indicators for the Storage
 
         self.mem_service = session.service('ALSystem')
         self.free_memory = float
@@ -54,18 +54,29 @@ class Indicators(object):
         self.autolife_service = session.service('ALAutonomousLife')
         self.current_state = "Off"
         self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
-       
 
-        self.cpu = rospy.Publisher('/cpustatus', Float32MultiArray, queue_size=10)
-        self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
-        self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
+        #Indicators for the CPU Status
+
+        self.cpu_pub = rospy.Publisher('/cpustatus', Float32MultiArray, queue_size=10)
+        self.cpu_st = Float32MultiArray()
+
+        #Indicators for the Memory Status
+ 
+        self.memory_pub = rospy.Publisher('/memorystatus', Float32MultiArray, queue_size=10)
+        self.mem_st = Float32MultiArray()
+
+        #Indicators for the Network Status
+
+        self.network_pub = rospy.Publisher('/Networkstatus', String, queue_size=10)
+        self.net_st = ""
+       
 
 
         self.rate = rospy.Rate(1)
               
 
     def run(self):
-        while True:
+        while not rospy.is_shutdown():
 
             try:
                 self.free_memory = self.mem_service.freeMemory()
@@ -97,6 +108,31 @@ class Indicators(object):
             except Exception as e:
                 rospy.logerr("Error getting Autonomous Life Status : ", e)
                 
+            try:
+
+                a = psutil.virtual_memory()
+
+                self.mem_st = [a.total, a.available, a.percent]
+                if a.percent > 90.0:
+                    rospy.logwarn("Maqui Use of Memory has reached 90%")
+                self.memory_pub.publish(self.mem_st)
+
+            except Exception as e:
+                rospy.logerr("Error getting Virtual Memory: ", e)
+
+            try:
+                self.cpu_st = psutil.cpu_percent(interval=0.0, percpu=True)
+                self.cpu_pub.publish(self.cpu_st)
+                
+            except Exception as e:
+                rospy.logerr("Error getting CPU Percent: ", e)
+
+            try:
+                self.net_st = psutil.net_if_stats()
+                self.newtwork_pub.publish(str(self.net_st))
+                
+            except Exception as e:
+                rospy.logerr("Error getting NET Status: ", e)
 
             self.rate.sleep()
 
