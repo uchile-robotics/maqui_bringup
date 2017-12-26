@@ -6,7 +6,7 @@ import sys
 import rospy
 from std_msgs.msg import Float32, Float32MultiArray, String
 from os import environ
-
+import psutil
 
 class Indicators(object):
     def __init__(self):
@@ -56,6 +56,11 @@ class Indicators(object):
         self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
        
 
+        self.cpu = rospy.Publisher('/cpustatus', Float32MultiArray, queue_size=10)
+        self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
+        self.autolife_pub = rospy.Publisher('/autolifestatus', String, queue_size=10)
+
+
         self.rate = rospy.Rate(1)
               
 
@@ -66,56 +71,32 @@ class Indicators(object):
                 self.free_memory = self.mem_service.freeMemory()
                 self.total_memory = self.mem_service.totalMemory()
 
-            except KeyboardInterrupt:
-            
-                print "Interrupted by user"
-                print "Stopping..."
-
-            try:
                 self.mem= [self.free_memory, self.total_memory]
                 self.mem_pair.data = self.mem
                 self.mem_pub.publish(self.mem_pair)
-
-            except KeyboardInterrupt:
             
-                print "Interrupted by user"
-                print "Stopping..."
-
-            try:
-                self.ip_adress = self.ip_service.ipAdress()
-                self.ip_pub.publish(self.ip_adress)
-
-            except KeyboardInterrupt:
-            
-                print "Interrupted by user"
-                print "Stopping..."
+            except Exception as e:
+                rospy.logerr("Error getting Pepper Memory : ", e)
 
             try:
                 self.battery_level.data = self.battery_service.getBatteryCharge()
                 self.battery_pub.publish(self.battery_level)
 
-            except KeyboardInterrupt:
-            
-                print "Interrupted by user"
-                print "Stopping..."
+            except Exception as e:
+                rospy.logerr("Error getting Pepper Battery Status : ", e)
 
             try:
                 self.hatch_status.data = self.hatch_service.getData("Device/SubDeviceList/Platform/ILS/Sensor/Value")
-                self.hatch_pub.publish(str(self.hatch_status))
-                
-            except KeyboardInterrupt:
-            
-                print "Interrupted by user"
-                print "Stopping..."
+                self.hatch_pub.publish(self.hatch_status)
+            except Exception as e:
+                rospy.logerr("Error getting Pepper Hatch Status: ", e)                
                 
             try:
                 self.current_state = self.autolife_service.getState()
                 self.autolife_pub.publish(self.current_state)
+            except Exception as e:
+                rospy.logerr("Error getting Autonomous Life Status : ", e)
                 
-            except KeyboardInterrupt:
-            
-                print "Interrupted by user"
-                print "Stopping..."
 
             self.rate.sleep()
 
