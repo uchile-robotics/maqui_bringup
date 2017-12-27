@@ -141,7 +141,7 @@ class Indicators(object):
                 rospy.logerr("Error getting Virtual Memory: ", e)
 
             try:
-                self.cpu_st = psutil.cpu_percent(interval=0.0, percpu=True)
+                self.cpu_st = psutil.cpu_percent(interval=0.0, percpu=False)
                 self.cpu_pub.publish(self.cpu_st)
                 
             except Exception as e:
