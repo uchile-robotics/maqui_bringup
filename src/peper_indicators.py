@@ -53,14 +53,8 @@ class Indicators(object):
 
         #Indicators for the CPU Status
 
-<<<<<<< HEAD
         self.cpu_pub = rospy.Publisher('/cpustatus', Float32, queue_size=10)
         self.cpu_st = float
-=======
-        self.cpu_st = Float32MultiArray()
-        self.cpu_pub = rospy.Publisher('/cpustatus', Float32MultiArray, queue_size=10)
->>>>>>> 2c323a11a02453272faa6f34eeb0a0550069b489
-
         #Indicators for the Memory Status
  
         self.memory_pub = rospy.Publisher('/memorystatus', Float32MultiArray, queue_size=10)
@@ -144,11 +138,7 @@ class Indicators(object):
                 rospy.logerr("Error getting Virtual Memory: {0}".format(e))
 
             try:
-<<<<<<< HEAD
                 self.cpu_st = psutil.cpu_percent(interval=0.0, percpu=False)
-=======
-                self.cpu_st.data = psutil.cpu_percent(interval=0.0, percpu=True)
->>>>>>> 2c323a11a02453272faa6f34eeb0a0550069b489
                 self.cpu_pub.publish(self.cpu_st)
                 
             except Exception as e:
