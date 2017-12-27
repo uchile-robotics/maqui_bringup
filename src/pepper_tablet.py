@@ -25,8 +25,10 @@ class Tablet(object):
         self.session = app.session
 
 
-        self.memory = self.robot.session.service("ALMemory")
+        self.memory = self.session.service("ALMemory")
+        self.tablet = self.session.service("ALTabletService")
 
+    def run(self):
         self._console_pub = rospy.Publisher('maqui/tablet/console_msg', String, queue_size=10)
 
         self.error_subscriber = self.memory.subscriber("ALTabletService/error")
@@ -38,7 +40,6 @@ class Tablet(object):
 
     
 
-        self.rate = rospy.Rate(1)
 
     def onError_cb(self):
         rospy.logerr("Tablet Error")
