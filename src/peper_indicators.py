@@ -57,8 +57,8 @@ class Indicators(object):
 
         #Indicators for the CPU Status
 
-        self.cpu_pub = rospy.Publisher('/cpustatus', Float32MultiArray, queue_size=10)
-        self.cpu_st = Float32MultiArray()
+        self.cpu_pub = rospy.Publisher('/cpustatus', Float32, queue_size=10)
+        self.cpu_st = float
 
         #Indicators for the Memory Status
  
