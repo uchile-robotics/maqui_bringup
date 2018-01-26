@@ -1,7 +1,7 @@
 <launch>  
 
 	<!-- run pointcloud_to_laserscan node -->
-	<arg name="camera" default="/pepper_robot/camera" />
+	<arg name="camera" default="/maqui/camera" />
     <node pkg="uchile_pcl_to_scan" type="uchile_pcl_to_scan_node" name="pointcloud_to_laserscan">
         <remap from="cloud_in" to="$(arg camera)/depth_registered/points"/>
         <remap from="scan" to="$(arg camera)/scan"/>
