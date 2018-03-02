@@ -13,7 +13,7 @@
     </include>
 
     <!-- fake localization -->
-    <node pkg="aruco_mapping" type="optical_fake_localization" name="fake_localization" ns="/maqui/nav/">
+    <node pkg="fake_localization" type="fake_localization" name="fake_localization" ns="/maqui/nav/">
         <remap from="base_pose_ground_truth" to="/maqui/odom"/>
         <remap from="initialpose"            to="/maqui/nav/initialpose"/>
         <remap from="amcl_pose"              to="/maqui/nav/amcl_pose"/>
