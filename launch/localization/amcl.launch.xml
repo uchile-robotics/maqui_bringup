@@ -19,10 +19,10 @@
 
     <!-- lasers relay -->
 	<node pkg="topic_tools" type="relay" name="amcl_laser_scan_relay" ns="/maqui/nav/"
-		args="/pepper_robot/laser /maqui/nav/amcl/scan"/>
+		args="/maqui/laser /maqui/nav/amcl/scan"/>
 	
 	<!-- rgbd scan relay -->
-	<!-- <node pkg="topic_tools" type="relay" name="amcl_scan_front_relay" ns="/maqui/nav/" args="/pepper_robot/camera/scan /maqui/nav/amcl/scan"/> -->
+	<!-- <node pkg="topic_tools" type="relay" name="amcl_scan_front_relay" ns="/maqui/nav/" args="/maqui/camera/scan /maqui/nav/amcl/scan"/> -->
 
 </launch>
 

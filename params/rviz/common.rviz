@@ -1036,7 +1036,7 @@ Visualization Manager:
           Length: 1
           Name: Odometry
           Position Tolerance: 0.1
-          Topic: /pepper_robot/odom
+          Topic: /maqui/odom
           Value: false
       Enabled: true
       Name: navigation
@@ -1049,7 +1049,7 @@ Visualization Manager:
           Enabled: false
           Name: Range Front
           Queue Size: 100
-          Topic: /pepper_robot/sonar/front
+          Topic: /maqui/sonar/front
           Unreliable: false
           Value: false
         - Alpha: 0.5
@@ -1059,7 +1059,7 @@ Visualization Manager:
           Enabled: false
           Name: Range Rear
           Queue Size: 100
-          Topic: /pepper_robot/sonar/back
+          Topic: /maqui/sonar/back
           Unreliable: false
           Value: false
         - Alpha: 1
@@ -1087,7 +1087,7 @@ Visualization Manager:
           Size (Pixels): 5
           Size (m): 0.01
           Style: Points
-          Topic: /pepper_robot/laser
+          Topic: /maqui/laser
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
@@ -1117,14 +1117,14 @@ Visualization Manager:
           Size (Pixels): 10
           Size (m): 0.01
           Style: Points
-          Topic: /pepper_robot/camera/scan
+          Topic: /maqui/camera/scan
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
         - Class: rviz/Image
           Enabled: false
-          Image Topic: /pepper_robot/camera/bottom/image_raw
+          Image Topic: /maqui/camera/bottom/image_raw
           Max Value: 1
           Median window: 5
           Min Value: 0
@@ -1136,7 +1136,7 @@ Visualization Manager:
           Value: false
         - Class: rviz/Image
           Enabled: false
-          Image Topic: /pepper_robot/camera/front/image_raw
+          Image Topic: /maqui/camera/front/image_raw
           Max Value: 1
           Median window: 5
           Min Value: 0
@@ -1171,7 +1171,7 @@ Visualization Manager:
           Size (Pixels): 3
           Size (m): 0.01
           Style: Points
-          Topic: /pepper_robot/camera/depth_registered/points
+          Topic: /maqui/camera/depth_registered/points
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
