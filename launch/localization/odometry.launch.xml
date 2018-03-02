@@ -8,7 +8,9 @@
     </include>
 
     <!-- Map analyzer -->
-    <include file="$(find uchile_maps)/launch/map_analyzer.launch"/>
+    <include file="$(find uchile_maps)/launch/map_analyzer.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+    </include>
 
     <!-- fake localization -->
     <node pkg="aruco_mapping" type="optical_fake_localization" name="fake_localization" ns="/maqui/nav/">

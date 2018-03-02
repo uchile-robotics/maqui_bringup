@@ -23,5 +23,5 @@ odom_frame_id: "/odom"
 # The base frame of the robot. New in 1.1.3
 base_frame_id: "/base_footprint"
 
-localization_global_frame_id: "/odom"
-localization_camera_optical_frame_id: "/CameraTop_optical_frame_ORB"
+localization_global_frame_id: "/map_orb"
+localization_camera_optical_frame_id: "/camera_orb_position"
