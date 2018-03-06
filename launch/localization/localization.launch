@@ -4,12 +4,11 @@
       - odometry: Just believe the odometry. Fast, but bad for large movements.
       - amcl    : Localization algorithm, merges odometry with laser readings. Good performance.
       - gmapping: Use this to create a new map.
-      - visual : Use ORB SLAM localization
     -->
     <arg name="type"      default="amcl"/> 
 
     <!-- This is the name of the map to be loaded on the map server -->
-    <arg name="map_name"  default="map"/>
+    <arg name="map_name"  default="lab"/>
 
 
     <!-- launch desired localization model -->

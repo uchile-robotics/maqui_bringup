@@ -4,8 +4,8 @@
 	<!-- ==================== PARAMETERS ================== -->
 	<!-- ================================================== -->
 
-	<arg name="maqui_ip"   default="192.168.1.129"/>
-	<arg name="roscore_ip" default="127.0.0.1"/>
+	<arg name="maqui_ip"   default="$(env robot_ip)"/>
+	<arg name="roscore_ip" default="$(env ROS_IP)"/>
 
 
 	<!-- ================================================== -->
@@ -20,6 +20,7 @@
 		<arg name="nao_ip"     value="$(arg maqui_ip)"/>
 		<arg name="roscore_ip" value="$(arg roscore_ip)"/>
 		<arg name="network_interface" value="wlan0"/>
+		<arg name="namespace" value="maqui"/>
 	</include> 
 
 
@@ -28,25 +29,12 @@
 	<!-- =================================================== -->
 
 	<!-- rgbd PointCloud to LaserScan projection -->
-	<!--	
-        <include file="$(find maqui_bringup)/launch/tools/pcl_to_scan.launch"/>
-	-->	
-
-	<!-- localization  -->
-	<include file="$(find maqui_bringup)/launch/localization/localization.launch">
-		<!-- <arg name="type" value="odometry"> -->
-		<arg name="type" value="amcl"/>
-	</include>
-
-
-	<!-- ================================== -->
-	<!-- ==           KNOWLEDGE          == -->
-	<!-- ================================== -->
-	
-
-<!--
-	<include file="$(find nao_apps)/launch/speech.launch">
-		<arg name="nao_ip" value="$(arg maqui_ip)"/>
-	</include>	
+<!--      <include file="$(find maqui_bringup)/launch/tools/pcl_to_scan.launch"/>
  -->
+	<!-- localization  -->
+	
+	<!--include file="$(find maqui_bringup)/launch/localization/localization.launch">
+		<arg name="type" value="odometry"/>
+	</include-->
+
 </launch>
