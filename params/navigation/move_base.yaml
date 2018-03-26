@@ -14,7 +14,7 @@
     # {name: twist_up_1,         type: uchile_twist_recovery/TwistRecovery},
     # {name: twist_left_up,      type: uchile_twist_recovery/TwistRecovery},
     # {name: twist_up_2,         type: uchile_twist_recovery/TwistRecovery},
-    {name: rotate_recovery,    type: rotate_recovery/RotateRecovery},
+    # {name: rotate_recovery,    type: rotate_recovery/RotateRecovery},
     {name: aggressive_reset,   type: clear_costmap_recovery/ClearCostmapRecovery}
   ]
   # twist_up_1:   {linear_x:  0.15, angular_z:  0.00, duration: 3}
