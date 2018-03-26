@@ -1,7 +1,7 @@
 !grammar spr;
 !start <_main_>;
 
-<_main_> :  [<_vocative>] <_questions>  [<_noise>];
+<_main_> :  [<_vocative>] <_questions> | <_noise> [<_noise>] [<_noise>];
 
 <_questions> : <_aq> | <_cq> | <_oq> | <_pq>;
 
@@ -23,12 +23,15 @@
 <_cq3> : <_how> many people in the crowd are <_gestures_or_postures>;
 
 <_gestures_or_postures> : <_people_gestures> | <_people_postures> | <_or_postures>;
+<_pp_gestures_postures> :<_people_gestures> | <_people_postures>;
+
 <_people_gestures> : waving | rising left arm | rising right arm | pointintg left | pointing right;
 <_people_postures> : standing | sitting | lying ;
+
 <_or_postures> : standing or lying | standing or sitting | sitting or lying;
 
 <_cq4> : was the <_people_postures> person <_or_gender>;
-<_cq5> : [tell me if] the <_people_postures> person was a <_person_gender>;
+<_cq5> : tell me if the <_pp_gestures_postures> person was a <_person_gender>;
 
 <_person> : <_person_phase> | <_person_gender>;
 <_person_gender> : male | female | man | woman | boy | girl;
@@ -47,7 +50,7 @@
 
 <_oq> : <_oq1> | <_oq2> | <_oq3> | <_oq4> | <_oq5> | <_oq6> | <_oq7> | <_oq8> | <_oq9> | <_oq10>| <_oq11> | <_oq12> | <_oq13>;
 
-<_oq1> : <_where> can i find [<_a_the>] <_smallobject> ;
+<_oq1> : <_where> [can] i find [<_a_the>] <_smallobject> ;
 <_oq2> : how many <_category_object> there are;
 <_oq3> : <_what> <_is> <_the> colour of <_the> <_smallobject>  ;
 <_oq4> : <_how> many <_objects> are in the <_manipulationplace>;
@@ -63,7 +66,7 @@
 
 <_a_the> : a | <_the>;
 <_objects> : object | <_category_object>;
-<_objects2> : <_smallobject> | <_category_object>;
+<_objects2> : <_smallobject> |  <_bigobject>;
 <_object_description> : smallest | lightest | biggest | heaviest ;
 <_object_comp> : heavier | lighter | smaller | bigger;
 
@@ -94,20 +97,20 @@
 
 <_room>: kitchen | dinning room | bedroom | living room | office | corridor | bathroom;
 
-<_manipulationplace> : [<_side>] bedside [table] | living shelf | TV stand | living table | center table  | drawer | desk | bar | cupboard | sink | sideshelf | bookcase | dinning table | fridge | counter | cabinet  | couch table | dinner table | kitchen counter | kitchen table | table ;  
+<_manipulationplace> : [<_side>] bedside [table] | living shelf | TV stand | living table | center table  | drawer | desk | bar | cupboard | sink | sideshelf | bookcase | dining table | fridge | counter | cabinet  | couch table |  kitchen counter | kitchen table;  
 
-<_bigobject>: sofa | bed | shelf | chairs | plant  <_manipulationplace>;
+<_bigobject>: sofa | bed | shelf | chairs | <_manipulationplace>;
 
 <_category_object> :  snacks | candies | food | drinks | toiletries | containers |objects;
 
 <_smallobject> : <_snacks> | <_candies> | <_food> | <_drinks> | <_toiletries> | <_containers>; 
 
 <_snacks> : chips | senbei | pringles | peanuts;
-<_candies> : chocolate [bar] | manju | mints | chocolate [egg] | biscuits | bubblegum | tomatochips | barbecuechips | honeychip | coconutcereals | cocoballs | eggstars ;
-<_food> : noodles | apple | paprika | melon | sushi | flakes | oat | gramsoup | beansauce | lemon | pear;
-<_drinks> : tea | beer | coke | sake | greentea | papaya milk | pure milk | water | orangejuice | beer;
-<_toiletries>: shampoo | soap | cloth | sponge | toiletpaper | lotion | toothpaste;
-<_containers>: bowl | mug | glass | tray | plate | box ;
+<_candies> : chocolate bar | manju | mints | chocolate egg ;
+<_food> : noodles | apple | paprika | melon | sushi | flakes | oat;
+<_drinks> : tea | beer | coke | sake;
+<_toiletries>: shampoo | soap | cloth | sponge;
+<_containers>: bowl | mug | glass | tray | plate | box | bag;
 
 <_color> : red | blue | white | black | green | yellow ;
 

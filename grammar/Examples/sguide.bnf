@@ -1,0 +1,13 @@
+!grammar sguide;
+!start <_main_>;
+
+<_main_> : <_locations> | <_init> | <_commands> | <_confirm> | <_chat> | <_control>;
+
+
+<_locations> : balcony | bedroom | bed | bistro | corridor | entrance | kitchen | left | right | front | back | living | living room | room | office | dining room | lobby;
+<_init_sub> : guide | bring | take;
+<_init> : [pepper] <_init_sub> me;
+<_commands> : down the hall | return | wait;
+<_confirm> : yes | no | okay | nevermind;
+<_control> : slow down | speed up;
+<_chat> : What is your name | What are your interests | What can you eat | What is your location | Where are you from | Where are you | Do you have any brothers | What is your favorite fruit;

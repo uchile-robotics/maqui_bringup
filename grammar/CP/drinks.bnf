@@ -3,7 +3,7 @@
 
 <_main_> : [<_response>] <_drinks>;
 
-<_drinks> : tea | beer | coke | sake | greentea | papaya milk | pure milk | water | orangejuice | beer | coke | sprite | baltica;
+<_drinks> : coke | sprite | baltica | fanta;
 
 <_vocative> : robot | pepper | maqui;
 

@@ -1,0 +1,142 @@
+!grammar spr;
+!start <_main>;
+
+<_main> : [<_vocative>]  <_actions>;
+
+<_actions> : <_action_with_objects> | <_action_with_persons> | <_mixed_actions>;
+
+<_action_with_objects> : <_manipulation_action> | <_count_object_actions>;
+
+<_manipulation_action> : <_move_object_from_place_to_place> | <_find_object_put_on_place> | <_put_object_in_place> | <_grasp_and_deliver>;
+<_count_object_actions> : <_find_object_in_place> | <_tell_me_how_many_objects> | <_find_object>;
+
+
+<_move_object_from_place_to_place> : <_grasp_object_from_place> to [the] <_location>;
+
+<_grasp_object_from_place> : <_grasp_object> from [the] <_location> ; 
+
+<_grasp_object> : <_grasp> [the] <_object>;
+
+<_go_place_find_object_put_on_place> : <_go_place_find_object> and <_put_it_in_place>;
+
+<_go_place_find_object> : <_go_place> <_find_object> ;
+
+<_put_object_in_place> : <_put_object> on [the] <_place_or_location>;
+
+<_put_object> : <_put> [a] <_object>;
+
+<_grasp_and_deliver> : <_grasp_and_deliver_to_place> | <_grasp_and_deliver_to_person> ;
+
+<_grasp_and_deliver_to_place> : <_grasp_object_from_place> [and] <_put_it_in_place> ;
+
+<_grasp_and_deliver_to_person> : <_grasp_object_from_place> [and] <_give_it_to_person_in_place_or_bring_me_to_me> ;
+
+<_give_it_to_person_in_place_or_bring_me_to_me> : <_give_it_to_person_in_place> | <_bring> it to me ;
+
+<_put_it_in_place> : <_put> it on [the] <_place_or_location>;
+
+<_bring_me_object> : <_bring> me [the] <_object>;
+
+
+
+<_find_object> : <_find> [the] <_object> ;
+
+<_find_object_in_place> : <_find_object> in [the] <_location> ;
+
+<_tell_me_how_many_objects> : <_tell> me how many <_object> there are <_preposition> the <_location> ;
+
+<_find_object_put_on_place> : <_find_object> <_put_it_in_place>;
+
+<_mixed_actions> : <_give_object_to_person_in_place> | <_go_place_look_object_deliver_to_person_at_place> ;
+
+<_give_it_to_person_in_place> : <_give_it_to_person> in [the] <_location> ;
+
+<_give_it_to_person> : <_give_it> to <_person>;
+
+<_give_object> : <_give> [the] <_object> ;
+
+<_give_it> : <_give> it ;
+
+<_give_object_to_person> : <_give_object> to <_person> ;
+
+<_give_object_to_person_in_place> : <_give_object_to_person>  <_in_at> [the] <_location>;
+
+<_go_place_look_object_deliver_to_person_at_place> : <_go_place> <_look> [for] [the] <_object> and deliver it to <_person> <_in_at> <_place> ;
+
+
+
+
+<_action_with_persons> : <_go_place_find_person_and_interact> | <_tell_me_name_of_person_in_place> | <_tell_something_to_person_at_place> | <_find_person_in_place_and_answer_question>;
+
+<_go_place_find_person_and_interact> : <_go_place_find_person> and <_tell_something_or_answer_questions>;
+
+<_go_place_find_person> : <_go_place> <_find_person> ;
+
+<_find_person> : <_find> <_person> ;
+
+<_tell_something_or_answer_questions> : <_tell_something> | <_answer_question>;
+
+<_tell_something> : <_tell> <_something_to_tell>;
+
+<_answer_question> : <_answer> [a] <_question> ;
+
+<_tell_me_name_of_person_in_place> : <_tell> me the name of the person <_in_at> [the] <_location>;
+
+<_tell_something_to_person_at_place> : <_tell_something> to <_person> <_in_at> [the] <_location> ;
+
+<_find_person_in_place_and_answer_question> : <_find_person_in_place> and <_answer_question> ;
+
+<_find_person_in_place> : <_find_person> in [the] <_location> ;
+
+
+<_go_place> : <_go> to [the] <_place_or_location>;
+
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
+
+<_preposition> : at | on | in; 
+
+<_in_at> : in | at;
+
+<_location> : bar | bed | bedroom | bookshelf | cabinet | closet | couch table | desk | dining room | dinner table | kitchen | kitchen counter | living room | door | stove | sofa | side table;
+
+<_place> : bar ;
+
+<_place_or_location> : <_place> | <_location>;
+
+<_object> :  coke | fanta | beer | pringles;
+
+<_category_object> :  drink | food | objects;
+
+<_go> : go | navigate;
+
+<_grasp> : take | pick up;
+
+<_give> :  give;
+<_bring> : bring;
+<_find> : locate | look for;
+
+<_put> : put | leave | place ;
+
+<_tell> : tell ;
+
+<_ask> : ask | request ;
+
+<_answer> : answer;
+
+<_question> : question ;
+
+<_person> : a person | skyler | someone;
+
+<_gesture_person> : the <_gesture> person ;
+
+<_gesture> : waving ;
+
+<_something_to_tell> : the day of the week | the time | something about yourself | your name | a joke | what day is tomorrow;
+
+<_follow> : follow ;
+
+<_guide> : guide | take ;
+
+<_look> : look | find;
+
+<_vocative> : pepper | maqui | robot;

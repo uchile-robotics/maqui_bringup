@@ -1,0 +1,13 @@
+!grammar sguide;
+!start <_main_>;
+
+<_main_> : <_locations> | <_init> | <_commands> | <_confirm> | <_chat> | <_control>;
+
+
+<_locations> : balcon | cuarto | cama | bistro | entrada | cocina | izquierda | derecha | alante | atras | sala | habitacion | oficina | comedor | lobby;
+<_init_sub> : guiame | llevame | traeme;
+<_init> : [maqui] <_init_sub>;
+<_commands> : al final del pasillo | devuelve | espera;
+<_confirm> : si | no | vale | olvidalo;
+<_control> : mas lento | mas rapido;
+<_chat> : Cual es tu nombre | Donde estas | De donde eres | Quien es tu jefe | Cual es tu fruta favorita ;
