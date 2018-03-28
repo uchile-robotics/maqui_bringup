@@ -95,7 +95,7 @@
 <_pq22>: <_what> was <_the> last question;
 
 
-<_room>: bedroom | dining_room | living_room | kitchen | corridor | bathroom ; 
+<_room>: kitchen | dinning room | bedroom | living room | office | corridor | bathroom;
 
 <_manipulationplace> : [<_side>] bedside [table] | living shelf | TV stand | living table | center table  | drawer | desk | bar | cupboard | sink | sideshelf | bookcase | dining table | fridge | counter | cabinet  | couch table |  kitchen counter | kitchen table;  
 
@@ -103,16 +103,14 @@
 
 <_category_object> :  snacks | candies | food | drinks | toiletries | containers |objects;
 
-<_smallobject> : <_toiletries> | <_snacks> | <_fruits> | <_cutlery> | <_tableware> | <_food> | <_drinks> | <_containers> ; 
+<_smallobject> : <_snacks> | <_candies> | <_food> | <_drinks> | <_toiletries> | <_containers>; 
 
-<_toiletries>: shampoo | soap | cloth | sponge | tooth paste ;
-<_snacks> : chips | m and m | pringles | cookies ;
-<_fruits> : apple | melon | banana | pear | peach ;
-<_cutlery> : tea spoon | spoon | fork | knife | napkin ;
-<_tableware> : bid dish | small dish | bowl | glass | mug ;
-<_food> : pasta | noodles | tuna fish | pickles | choco flakes | robo o's | muesli ;
-<_drinks> : tea | beer | coke | water | milk ;
-<_containers>: tray | box | bag ;
+<_snacks> : chips | senbei | pringles | peanuts;
+<_candies> : chocolate bar | manju | mints | chocolate egg ;
+<_food> : noodles | apple | paprika | melon | sushi | flakes | oat;
+<_drinks> : tea | beer | coke | sake;
+<_toiletries>: shampoo | soap | cloth | sponge;
+<_containers>: bowl | mug | glass | tray | plate | box | bag;
 
 <_color> : red | blue | white | black | green | yellow ;
 
