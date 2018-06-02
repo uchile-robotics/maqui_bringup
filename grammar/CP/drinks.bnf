@@ -1,12 +1,13 @@
 !grammar drinks;
 !start <_main_>;
 
-<_main_> : [<_response>] <_drinks>;
+<_main_> : [<_vocative>] [<_response>] <_drinks> ;
 
-<_drinks> : coke | sprite | baltica | fanta;
+<_drinks> : coke | milk | water | tea | beer ;
 
 <_vocative> : robot | pepper | maqui;
 
-<_response> : i want [ a ];
+<_response> : i want [ a ] | i want to drink | i would like to drink | i would like ;
 
-<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
+
+

@@ -1,0 +1,15 @@
+!grammar drinks;
+!start <_main_>;
+ 
+<_main_> : <_av_drinks_sentence> | <_miss_drink_sentence> ;
+
+<_vocative> : robot | pepper | maqui;
+
+<_av_drinks_sentence> : <_av_drinks_phrase> <_drinks> [<_drinks>] [<_drinks>];
+<_miss_drink_sentence> : [<_miss_drink_phrase>]  <_drinks>;
+
+<_av_drinks_phrase> : the available drinks are ;
+<_miss_drink_phrase> : the missing drink is ;
+<_drinks> : coke | milk | water | tea | beer;
+
+
