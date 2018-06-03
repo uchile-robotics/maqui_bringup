@@ -5,7 +5,7 @@
 
 <_names> : <_males_names> | <_females_names>;
 
-<_males_names> : ken | erik | samuel | brian | thomas | edward | michael | charlie | alex;
+<_males_names> : ken | erik | samuel | brian | thomas | edward | michael | charlie | alex | lukas | jose;
 
 <_females_names> : hanna | barbara | samantha | erika |sophie | jackie | samantha | skyler |charlie;
 

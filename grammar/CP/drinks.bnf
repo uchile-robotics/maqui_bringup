@@ -1,0 +1,13 @@
+!grammar drinks;
+!start <_main_>;
+
+<_main_> : [<_vocative>] [<_response>] <_drinks> ;
+
+<_drinks> : coke | milk | water | tea | beer ;
+
+<_vocative> : robot | pepper | maqui;
+
+<_response> : i want [ a ] | i want to drink | i would like to drink | i would like ;
+
+
+
