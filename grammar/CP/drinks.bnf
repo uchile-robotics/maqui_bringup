@@ -3,7 +3,7 @@
 
 <_main_> : [<_vocative>] [<_response>] <_drinks> ;
 
-<_drinks> : coke | milk | water | tea | beer ;
+<_drinks> : coke | sprite | chocolate drink | orange juice | grape juice ;
 
 <_vocative> : robot | pepper | maqui;
 

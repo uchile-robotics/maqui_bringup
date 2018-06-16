@@ -10,6 +10,6 @@
 
 <_av_drinks_phrase> : the available drinks are ;
 <_miss_drink_phrase> : the missing drink is ;
-<_drinks> : coke | milk | water | tea | beer;
+<_drinks> : coke | sprite | chocolate drink | orange juice | grape juice ;
 
 

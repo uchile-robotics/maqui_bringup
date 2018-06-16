@@ -5,6 +5,6 @@
 
 <_miss_drink_sentence> : [<_miss_drink_phrase>]  <_drinks>;
 <_miss_drink_phrase> : the missing drink is | there is no ;
-<_drinks> : coke | milk | water | tea | beer ;
+<_drinks> : coke | sprite | chocolate drink | orange juice | grape juice ;
 
 
