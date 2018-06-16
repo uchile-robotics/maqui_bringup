@@ -144,17 +144,21 @@
 <_manipulationplace> : bed | night table | wardrobe | dresser | armchair | drawer | desk | sideboard | cutlery drawer | dining table | chair | baby chair | bookshelf | sofa | coffee table | center table | bar | fireplace | tv couch | microwave | cupboard | counter | cabinet | sink | stove | fridge | freezer | washing machine | dishwasher | bidet | shower | bathtub | toilet | towel rail | bathroom cabinet | washbasin;  
 
 <_bigobject>: sofa | shelf | <_manipulationplace>;
-<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits;
+<_category_object> :  snacks | food | drinks | toiletries | containers | fruits | cutlery | tableware ;
 
-<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits>; 
+<_smallobject> : <_snacks> | <_food> | <_drinks> | <_toiletries> | <_containers> | <_tableware> | <_cutlery> | <_fruits>; 
+
+<_snacks> : chips | m and m's | pringles | cookies;
+<_food> : pasta | noodles | tuna fish | pickles | choco flakes | robo o's | muesli;
+<_drinks> : tea | beer | coke | water | milk;
+<_toiletries>: shampoo | soap | cloth | sponge | tooth paste;
+<_containers>: tray | box | bag;
+<_tableware>: big dish | small dish | bowl | glass | mug;
+<_cutlery>: tea spoon | spoon | fork | knife | napkin;
+<_fruits>: apple | melon | banana | pear | peach;
 <_color> : red | blue | white | black | green | yellow ;
 
-<_cleaning_stuff>: cloth | scrubby |sponge;
-<_containers>: basket | tray;
-<_drinks>: chocolate drink |coke | orange juice | grape juice | sprite;
-<_food>: cereal | noodle | sausage;
-<_fruits>:  apple | orange | paprika;
-<_snacks>: crackers | potato | chips | pringles;
+
 
 <_how> : how;
 <_what> : what ;
