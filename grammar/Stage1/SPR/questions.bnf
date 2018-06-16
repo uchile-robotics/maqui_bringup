@@ -146,14 +146,14 @@
 <_bigobject>: sofa | shelf | <_manipulationplace>;
 <_category_object> :  snacks | food | drinks | toiletries | containers | fruits | cutlery | tableware ;
 <_smallobject> : <_snacks> | <_food> | <_drinks> | <_toiletries> | <_containers> | <_tableware> | <_cutlery> | <_fruits>; 
-<_snacks> : chips | m and m's | pringles | cookies;
-<_food> : pasta | noodles | tuna fish | pickles | choco flakes | robo o's | muesli;
-<_drinks> : tea | beer | coke | water | milk;
-<_toiletries>: shampoo | soap | cloth | sponge | tooth paste;
-<_containers>: tray | box | bag;
+<_snacks> : chips | m and m's | pringles | cookies | crackers | potato chips;
+<_food> : pasta | noodles | tuna fish | pickles | choco flakes | robo o's | muesli | cereal | sausages;
+<_drinks> : tea | beer | coke | water | milk | chocolate drink | grape juice | orange juice | sprite;
+<_toiletries>: shampoo | soap | cloth | sponge | tooth paste | scrubby;
+<_containers>: tray | box | bag | basket;
 <_tableware>: big dish | small dish | bowl | glass | mug;
 <_cutlery>: tea spoon | spoon | fork | knife | napkin;
-<_fruits>: apple | melon | banana | pear | peach;
+<_fruits>: apple | melon | banana | pear | peach | orange | paprika;
 <_color> : red | blue | white | black | green | yellow ;
 
 <_how> : how;
