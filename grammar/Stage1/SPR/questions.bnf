@@ -141,9 +141,9 @@
 <_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table;  
 
 <_bigobject>: <_manipulationplace>;
-<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | kitchen stuff;
+<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | cutlery | tablewares;
 
-<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_kitchen_stuff>; 
+<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_cutlery> | <_tablewares>; 
 <_color> : red | blue | white | black | green | yellow ;
 
 <_cleaning_stuff>: cloth | scrubby |sponge;
@@ -151,8 +151,11 @@
 <_drinks>: chocolate drink | coke | orange juice | grape juice | sprite;
 <_food>: cereal | noodle | sausage;
 <_fruits>:  apple | orange | paprika;
-<_kitchen_stuff>: bowl | cup | fork | knife | plate | spoon;
 <_snacks>: crackers | potato chips | pringles;
+
+<_cutlery>: fork | knife | spoon;
+<_tablewares>: bowl | cup | plate;
+
 
 <_how> : how;
 <_what> : what ;
