@@ -136,22 +136,23 @@
 <_pq68> : <_who> is the inventor of the apple i microcomputer;
 <_pq69> : <_who> is considered to be the first computer programmer;
 
-<_room>: kitchen | dining room | bedroom | living room | corridor | bathroom;
+<_room>: kitchen | dining room | bedroom | living room | corridor;
 
-<_manipulationplace> : bed | night table | wardrobe | dresser | armchair | drawer | desk | sideboard | cutlery drawer | dining table | chair | baby chair | bookshelf | sofa | coffee table | center table | bar | fireplace | tv couch | microwave | cupboard | counter | cabinet | sink | stove | fridge | freezer | washing machine | dishwasher | bidet | shower | bathtub | toilet | towel rail | bathroom cabinet | washbasin;  
+<_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table;  
 
-<_bigobject>: sofa | shelf | <_manipulationplace>;
-<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits;
+<_bigobject>: <_manipulationplace>;
+<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | kitchen stuff;
 
-<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits>; 
+<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_kitchen_stuff>; 
 <_color> : red | blue | white | black | green | yellow ;
 
 <_cleaning_stuff>: cloth | scrubby |sponge;
 <_containers>: basket | tray;
-<_drinks>: chocolate drink |coke | orange juice | grape juice | sprite;
+<_drinks>: chocolate drink | coke | orange juice | grape juice | sprite;
 <_food>: cereal | noodle | sausage;
 <_fruits>:  apple | orange | paprika;
-<_snacks>: crackers | potato | chips | pringles;
+<_kitchen_stuff>: bowl | cup | fork | knife | plate | spoon;
+<_snacks>: crackers | potato chips | pringles;
 
 <_how> : how;
 <_what> : what ;
