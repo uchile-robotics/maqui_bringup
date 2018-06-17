@@ -123,10 +123,10 @@
 <_pq55> : name all of the robots on mars;
 <_pq56> : <_who> is the world's first android;
 <_pq57> : <_what> is a mechanical knight;
-<_pq58> : <_what> was the first computer in pass the turing test;
+<_pq58> : <_what> was the first computer to pass the turing test;
 <_pq59> : <_what> does moravec's paradox state;
 <_pq60> : <_what> is the ai knowledge engineering bottleneck;
-<_pq61> : <_why> is elon musk is worried about ai's impact on humanity;
+<_pq61> : <_why> is elon musk worried about ai's impact on humanity;
 <_pq62> : <_do> you think robots are a threat to humanity;
 <_pq63> : <_what> is a chatbot;
 <_pq64> : <_are> self driving cars safe;
@@ -141,9 +141,10 @@
 <_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table;  
 
 <_bigobject>: <_manipulationplace>;
-<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | cutlery | tablewares;
 
+<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | cutlery | tablewares;
 <_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_cutlery> | <_tablewares>; 
+
 <_color> : red | blue | white | black | green | yellow ;
 
 <_cleaning_stuff>: cloth | scrubby |sponge;
@@ -152,10 +153,8 @@
 <_food>: cereal | noodle | sausage;
 <_fruits>:  apple | orange | paprika;
 <_snacks>: crackers | potato chips | pringles;
-
 <_cutlery>: fork | knife | spoon;
-<_tablewares>: bowl | cup | plate;
-
+<_tableware>: bowl | cup | dish;
 
 <_how> : how;
 <_what> : what ;
