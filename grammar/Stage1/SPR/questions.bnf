@@ -44,7 +44,7 @@
 <_cq10> : <_what> <_is> <_the> <_number> <_of> <_people>;
 <_cq11> : <_what> <_is> <_the> size <_of> the crowd ;
 
-<_oq> : <_oq1> | <_oq2> | <_oq3> | <_oq4> | <_oq5> | <_oq6> | <_oq7> | <_oq8> | <_oq9> | <_oq10>| <_oq11> | <_oq12> | <_oq13>;
+<_oq> : <_oq1> | <_oq2> | <_oq3> | <_oq4> | <_oq5> | <_oq6> | <_oq7> | <_oq8> | <_oq9> | <_oq10>;
 <_oq1> : <_where> [can] i find [<_a_the>] <_smallobject> ;
 <_oq2> : how many <_category_object> are there;
 <_oq3> : <_what> <_is> <_the> color of <_the> <_smallobject>  ;
@@ -55,9 +55,6 @@
 <_oq8> : <_do> <_the> <_smallobject> and <_smallobject> belong to the same category;
 <_oq9> : <_which> is the <_object_description> <_objects>;
 <_oq10> : between the <_smallobject> and <_smallobject> which one is <_object_comp>;
-<_oq11> : [<_a_the>] <_smallobject> and [<_a_the>] <_smallobject> [ do] they belong to <_the> same category ;
-<_oq12> : do the objects in <_manipulationplace> belongs to the same category;
-<_oq13> : <_where> <_is> <_the> <_object_description> [object];
 
 <_a_the> : a | <_the>;
 
