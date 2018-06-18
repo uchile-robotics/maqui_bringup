@@ -5,9 +5,9 @@
 
 <_names> : <_males_names> | <_females_names>;
 
-<_males_names> : ken | erik | samuel | brian | thomas | edward | michael | charlie | alex;
+<_males_names> : alex | charlie | francis | james | john | michael | robert | robin | skyler | william;
 
-<_females_names> : hanna | barbara | samantha | erika |sophie | jackie | samantha | skyler |charlie;
+<_females_names> : elizabeth | jennifer | linda | mary | patricia;
 
 <_response> : my name is;
 <_vocative> : robot | pepper | maqui;

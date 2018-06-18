@@ -10,7 +10,6 @@
     <!-- This is the name of the map to be loaded on the map server -->
     <arg name="map_name"  default="blank_map"/>
 
-
     <!-- launch desired localization model -->
     <include file="$(find maqui_bringup)/launch/localization/$(arg type).launch.xml">
         <arg name="map_name" value="$(arg map_name)" />

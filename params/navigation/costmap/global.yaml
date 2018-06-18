@@ -2,7 +2,7 @@
 # Global Costmap
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 
-static_map: true
+static_map: false
 
 # Sequence of plugin specifications, one per layer.
 # Each specification is a dictionary with name and type fields.
@@ -169,7 +169,7 @@ inflation_layer:
 
   # The radius in meters to which the map inflates obstacle cost values. 
   # inflation_radius (double, default: 0.55)
-  inflation_radius: 0.5
+  inflation_radius: 0.6
 
   # A scaling factor to apply to cost values during inflation. The cost 
   # function is computed as follows for all cells in the costmap further
@@ -187,7 +187,6 @@ inflation_layer:
 # Obstacle Layer
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 obstacle_layer:
-
   enabled: false
   combination_method: 1
 
