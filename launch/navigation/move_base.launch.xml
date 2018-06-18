@@ -23,9 +23,7 @@
 		<rosparam file="$(find maqui_bringup)/params/navigation/move_base.yaml" command="load"/>
 
 		<!-- costmap parameters -->
-		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/common.yaml" command="load" ns="global_costmap"/>
 		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/global.yaml" command="load" ns="global_costmap"/>
-		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/common.yaml" command="load" ns="local_costmap"/>
 		<rosparam file="$(find maqui_bringup)/params/navigation/costmap/local.yaml"  command="load" ns="local_costmap"/>
 		
 		<!-- rewrite  observation_sources when use_rgbd is set to true -->
