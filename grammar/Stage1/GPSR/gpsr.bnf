@@ -3,33 +3,34 @@
 
 <_main> : [<_vocative>]  <_actions> ;
 
-
-
 <_actions> :  <_action_with_persons> | <_action_with_objects>;
 
 
 <_action_with_persons> : <_go_place_find_person_and_interact> | <_find_person_in_place_and_answer_interact> |  <_talk_with_person> | <_tell_something_to_person_at_place> | <_tell_me_name_of_person_in_place> ;
 
-<_go_place_find_person_and_interact> : <_go_place_find_person> and <_interact>;
-<_go_place_find_person> : <_go_place> <_find_person> ;
-
-<_find_person_in_place_and_answer_interact> : <_find_person_in_place> and <_interact>;
-<_find_person_in_place> : <_find_person> at [the] <_manipulationplace> ;
-
-<_find_person> : <_find> <_person> ;
-
-<_talk_with_person> : <_interact> to <_person> in <_place_or_location>;
-<_tell_something_to_person_at_place> : <_tell_something> to <_person> <_in_at> [the] <_location> ;
-
-<_tell_me_name_of_person_in_place> : <_tell> me the name of the person <_in_at> [the] <_place_or_location>;
-
 <_interact> : <_tell_something> | <_answer_question>;
 <_tell_something> : <_tell> <_something_to_tell>;
 <_answer_question> : <_answer> [a] <_question> ;
 
+
+<_go_place_find_person_and_interact> : <_go_place_find_person> and <_interact>;
+
+<_go_place_find_person> : <_go_place> <_find_person> ;
+
+<_find_person_in_place_and_answer_interact> : <_find_person_in_place> and <_interact>;
+<_find_person_in_place> : <_find_person> at [the] <_place_or_location> ;
+
+<_find_person> : <_find> <_person> ;
+
+<_talk_with_person> : <_interact> to <_person> in <_place_or_location>;
+<_tell_something_to_person_at_place> : <_tell_something> to <_person> <_in_at> [the] <_place_or_location> ;
+
+<_tell_me_name_of_person_in_place> : <_tell> me the name of the person <_in_at> [the] <_place_or_location>;
+
+
 <_action_with_objects>: <_tell_me_how_many_objects> | <_tell_me_how_many_category> | <_find_object_in_place>;
-<_tell_me_how_many_objects> : <_tell> me how many <_object> there are <_preposition> the <_location> ;
-<_tell_me_how_many_category> : <_tell> me how many <_category_object> there are <_preposition> the <_location> ;
+<_tell_me_how_many_objects> : <_tell> me how many <_object> there are <_preposition> the <_place_or_location> ;
+<_tell_me_how_many_category> : <_tell> me how many <_category_object> there are <_preposition> the <_place_or_location> ;
 
 <_find_object_in_place> : <_find_object> in [the] <_place_or_location> ;
 <_find_object> : <_find> [the] <_object> ;
@@ -64,37 +65,34 @@
 
 <_place_or_location> : <_room> | <_manipulationplace>;
 
-<_room>: kitchen | dinning room | bedroom | living room | office | corridor | bathroom;
-
-<_manipulationplace> : bedside [table] | living shelf | TV stand | living table | center table| drawer | desk | bar | cupboard | sink | sideshelf | bookcase | dinning table | fridge | counter | cabinet  | couch table | dinner table | kitchen counter | kitchen table;  
-
-<_bigobject>: sofa | bed | shelf | chairs  plant  <_manipulationplace>;
-
 <_location> : <_bigobject>;
-
-<_category_object> :  snacks | candies | food | drinks | toiletries | containers | objects;
 
 <_object> : <_smallobject>;
 
-<_smallobject> : <_snacks> | <_candies> | <_food> | <_drinks> | <_toiletries> | <_containers>; 
+<_room>: kitchen | dining room | bedroom | living room | corridor;
 
-<_snacks> : chips | senbei | pringles | peanuts;
+<_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table | entrance;  
 
-<_candies> : chocolate bar | manju | mints | chocolate egg ;
+<_bigobject>: <_manipulationplace> | chair | door | table;
 
-<_food> : noodles | apple | paprika | melon | sushi | flakes | oat;
-
-<_drinks> : tea | beer | coke | sake;
-
-<_toiletries>: shampoo | soap | cloth | sponge;
-
-<_containers>: bowl | mug | glass | tray | plate | box | bag;
+<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | cutlery | tablewares;
+<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_cutlery> | <_tablewares>; 
 
 <_color> : red | blue | white | black | green | yellow ;
 
+<_cleaning_stuff>: cloth | scrubby |sponge;
+<_containers>: basket | tray;
+<_drinks>: chocolate drink | coke | orange juice | grape juice | sprite;
+<_food>: cereal | noodle | sausage;
+<_fruits>:  apple | orange | paprika;
+<_snacks>: crackers | potato chips | pringles;
+<_cutlery>: fork | knife | spoon;
+<_tablewares>: bowl | cup | dish;
+
 <_names> : <_males_names> | <_females_names>;
-<_males_names> : ken | erik | samuel | brian | thomas | edward | michael | charlie | alex;
-<_females_names> : hanna | barbara | samantha | erika |sophie | jackie | samantha | skyler |charlie;
+
+<_males_names> : alex | charlie | francis | james | john | michael | robert | robin | skyler | william;
+<_females_names> : elizabeth | jennifer | linda | mary | patricia;
 
 <_vocative> :  [<_polite>] [<_robot_name>];
 <_polite> : please | could you; 

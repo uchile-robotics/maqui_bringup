@@ -1,0 +1,21 @@
+!grammar av_drinks;
+!start <_main_>;
+
+<_main_> : <_order> | <_noise> [<_noise>] [<_noise>] ;
+<_order> : <_combo> | <_drinks>;
+
+<_combo> : [<_vocative>] [<_intro>] [<_a>] <_food> <_conj> <_food> ;
+<_a> : some | an | a ;
+<_conj> : and | with;
+
+<_drinks> : coke | sprite | chocolate drink | orange juice | grape juice ;
+<_food> : <_food1> | <_fruits> | <_snacks>;
+
+<_intro> :  i would like | i want |  i wanna ;
+
+<_food1> :  cereal | noodles| sausage;
+<_fruits> : apple |orange | paprika;
+<_snacks> : crackers | potato chips| pringles;
+
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
+<_vocative> : maqui;

@@ -10,7 +10,7 @@
 <_aq3> : <_how> many <_bigobject>  are in the <_room>;
 <_aq4> : <_how> many doors does <_the> <_room> have;
 
-<_cq> : <_cq1> | <_cq2> | <_cq3> | <_cq4> | <_cq5> | <_cq6> | <_cq7> | <_cq8> | <_cq9> | <_cq10> | <_cq11> | <_cq12> | <_cq13> | <_cq14>;
+<_cq> : <_cq1> | <_cq2> | <_cq3> | <_cq4> | <_cq5> | <_cq6> | <_cq9> | <_cq10> | <_cq11>;
 <_cq1> : <_how> many <_people> are in the crowd ;
 <_cq2> : tell me the number of <_people> in <_the> crowd ;
 
@@ -35,11 +35,6 @@
 <_or_gender> : male or female | man or woman | boy or girl;
 
 <_cq6> : tell me how many people were wearing <_color>;
-<_cq7> : <_how> old do you think i am;
-<_cq8> : am i a <_person_gender> or a <_person_gender>;
-<_cq12> : am i a man or a woman;
-<_cq13> : are you seing a man or a woman;
-<_cq14>: man or a woman;
 <_cq9> : <_what> <_is> <_the> <_number> <_of> <_people_gender> and <_people_gender>;
 <_cq10> : <_what> <_is> <_the> <_number> <_of> <_people>;
 <_cq11> : <_what> <_is> <_the> size <_of> the crowd ;
@@ -119,9 +114,9 @@
 
 <_room>: kitchen | dining room | bedroom | living room | corridor;
 
-<_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table;  
+<_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table | entrance;  
 
-<_bigobject>: <_manipulationplace>;
+<_bigobject>: <_manipulationplace> | chair | door | table;
 
 <_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | cutlery | tablewares;
 <_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_cutlery> | <_tablewares>; 
@@ -135,7 +130,7 @@
 <_fruits>:  apple | orange | paprika;
 <_snacks>: crackers | potato chips | pringles;
 <_cutlery>: fork | knife | spoon;
-<_tableware>: bowl | cup | dish;
+<_tablewares>: bowl | cup | dish;
 
 <_how> : how;
 <_what> : what ;
