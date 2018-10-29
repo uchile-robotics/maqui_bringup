@@ -1,0 +1,7 @@
+!grammar av_drinks;
+!start <_main_>;
+
+
+<_main_> : maqui wait | maqui stop the test | <_noise> [<_noise>] [<_noise>];
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
+

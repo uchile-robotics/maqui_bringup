@@ -1,7 +1,7 @@
 <launch>
 
 	<include file="$(find maqui_bringup)/launch/navigation/navigation.launch">
-		<arg name="slam" value="true"/>
+		<arg name="slam" value="false"/>
 	</include>
 
 </launch>

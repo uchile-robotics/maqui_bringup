@@ -1,0 +1,181 @@
+!grammar spr;
+!start <_main_>;
+
+<_main_> : [<_vocative>] <_questions> | <_noise> [<_noise>] [<_noise>];
+<_questions> : <_aq> | <_cq> | <_oq> | <_pq>;
+
+<_aq> : <_aq1> | <_aq2> | <_aq3> | <_aq4> ; 
+<_aq1> : <_where> is [<_the>] <_bigobject> [located];
+<_aq2> : in <_which> room is <_the> <_bigobject>;
+<_aq3> : <_how> many <_bigobject>  are in the <_room>;
+<_aq4> : <_how> many doors does <_the> <_room> have;
+
+<_cq> : <_cq1> | <_cq2> | <_cq3> | <_cq4> | <_cq5> | <_cq6> | <_cq7> | <_cq8> | <_cq9> | <_cq10> | <_cq11> | <_cq12> | <_cq13> | <_cq14>;
+<_cq1> : <_how> many <_people> are in the crowd ;
+<_cq2> : tell me the number of <_people> in <_the> crowd ;
+
+<_people> : people | <_people_phase> | <_people_gender>;
+<_people_phase> : children | adults | elders;
+<_people_gender> : women | men | males | females | boys | girls ;
+
+<_cq3> : <_how> many people in the crowd are <_gestures_or_postures>;
+
+<_gestures_or_postures> : <_people_gestures> | <_people_postures> | <_or_postures>;
+<_pp_gestures_postures> :<_people_gestures> | <_people_postures>;
+<_people_gestures> : waving | raising their left arm | raising their right arm | pointing left | pointing right;
+<_people_postures> : standing | sitting | lying down;
+<_or_postures> : standing or lying down| standing or sitting | sitting or lying down;
+
+<_cq4> : was the person <_people_postures> a <_or_gender>;
+<_cq5> : tell me if the person <_pp_gestures_postures> was a <_person_gender>;
+
+<_person> : <_person_phase> | <_person_gender> | <_or_gender>;
+<_person_gender> : male | female | man | woman | boy | girl;
+<_person_phase> : adult | child | elder;
+<_or_gender> : male or female | man or woman | boy or girl;
+
+<_cq6> : tell me how many people were wearing <_color>;
+<_cq7> : <_how> old do you think i am;
+<_cq8> : am i a <_person_gender> or a <_person_gender>;
+<_cq12> : am i a man or a woman;
+<_cq13> : are you seing a man or a woman;
+<_cq14>: man or a woman;
+<_cq9> : <_what> <_is> <_the> <_number> <_of> <_people_gender> and <_people_gender>;
+<_cq10> : <_what> <_is> <_the> <_number> <_of> <_people>;
+<_cq11> : <_what> <_is> <_the> size <_of> the crowd ;
+
+<_oq> : <_oq1> | <_oq2> | <_oq3> | <_oq4> | <_oq5> | <_oq6> | <_oq7> | <_oq8> | <_oq9> | <_oq10>| <_oq11> | <_oq12> | <_oq13>;
+<_oq1> : <_where> [can] i find [<_a_the>] <_smallobject> ;
+<_oq2> : how many <_category_object> are there;
+<_oq3> : <_what> <_is> <_the> color of <_the> <_smallobject>  ;
+<_oq4> : <_how> many <_objects> are in the <_manipulationplace>;
+<_oq5> : <_what> objects are [stored] in <_the> <_manipulationplace> ;
+<_oq6> : <_where> [can] i find  <_a_the>  <_objects_and_category> ;
+<_oq7> : <_what> is the category of <_the> <_smallobject>;
+<_oq8> : <_do> <_the> <_smallobject> and <_smallobject> belong to the same category;
+<_oq9> : <_which> is the <_object_description> <_objects>;
+<_oq10> : between the <_smallobject> and <_smallobject> which one is <_object_comp>;
+<_oq11> : [<_a_the>] <_smallobject> and [<_a_the>] <_smallobject> [ do] they belong to <_the> same category ;
+<_oq12> : do the objects in <_manipulationplace> belongs to the same category;
+<_oq13> : <_where> <_is> <_the> <_object_description> [object];
+
+<_a_the> : a | <_the>;
+
+<_objects> : object | <_category_object>;
+<_objects2> : <_smallobject> |  <_bigobject>;
+<_objects_and_category> : <_objects2> | <_category_object>;
+<_object_description> : smallest | lightest | biggest | heaviest;
+<_object_comp> : heavier | lighter | smaller | bigger;
+
+<_pq> : <_pq1> | <_pq2> | <_pq3> | <_pq4> | <_pq5> | <_pq6> | <_pq7> | <_pq8> | <_pq9> | <_pq10> | <_pq11> | <_pq12> | <_pq13> | <_pq14> | <_pq15> | <_pq16> | <_pq17> | <_pq18> | <_pq19> | <_pq20> | <_pq21> | <_pq22> | <_pq23> | <_pq24> | <_pq25> | <_pq26> | <_pq27> | <_pq28> | <_pq29> | <_pq30> | <_pq31> | <_pq32> | <_pq33> | <_pq34> | <_pq35> | <_pq36> | <_pq37> | <_pq38> | <_pq39> | <_pq40> | <_pq41> | <_pq42> | <_pq43> | <_pq44> | <_pq45> | <_pq46> | <_pq47> | <_pq48> | <_pq49> | <_pq50> | <_pq51> | <_pq52> | <_pq53> | <_pq54> | <_pq55> | <_pq56> | <_pq57> | <_pq58> | <_pq59> | <_pq60> | <_pq61> | <_pq62> | <_pq63> | <_pq64> | <_pq65> | <_pq66> | <_pq67> | <_pq68> | <_pq69>;
+
+<_pq1> : <_who> created the C programming language;
+<_pq2> : <_when> was the C programming language invented;
+<_pq3> : <_when> was the B programming language invented;
+<_pq4> : <_where> does the term computer bug come from;
+<_pq5> : <_who> invented the first compiler;
+<_pq6> : <_which> robot is used in the open platform league;
+<_pq7> : <_which> robot is used in the domestic standard platform league;
+<_pq8> : <_which> robot is used in the social standard platform league;
+<_pq9> : <_why> is canada named canada;
+<_pq10> : <_what> is the capital of canada;
+<_pq11> : <_what> is the national anthem of canada;
+<_pq12> : <_what> <_is> the name of your team;
+<_pq13> : <_what> time <_is> it ;
+<_pq14> : <_what> day <_is> today;
+<_pq15> : <_do> you have dreams;
+<_pq16> : <_in> <_which> city will next year's robocup be hosted;
+<_pq17> : <_what> <_is> your name ;
+<_pq18> : <_in> <_which> year was the robocup founded ;
+<_pq19> : <_what> was <_the> last question;
+<_pq20> : <_what> is <_the> national anthem of canada;
+<_pq21> : <_who> is <_the> last samurai;
+<_pq22> : <_who> created the python programming language;
+<_pq23> : <_who> is the most handsome person in canada;
+<_pq24> : <_how> many time zones are there in canada;
+<_pq25> : <_what> is the longest street in the world;
+<_pq26> : <_how> long is Yonge Street in Ontario;
+<_pq27> : <_what> is the name of the bear cub exported from Canada to the London Zoo in 1915;
+<_pq28> : <_where> <_was> the blackberry smartphone developed;
+<_pq29> : <_what> is the world's largest coin;
+<_pq30> : <_what> year was canada invaded by the usa for the second time;
+<_pq31> : <_what> year was canada invaded by the usa for the first time;
+<_pq32> : <_what> country holds the record for the most gold medals at the Winter Olympics;
+<_pq33> : <_who> coined the term beatlemania;
+<_pq34> : <_when> was the mounted police formed;
+<_pq35> : <_when> was the royal canadian mounted police formed;
+<_pq36> : <_how> big is the RCMP;
+<_pq37> : <_what> else is Montreal called;
+<_pq38> : <_where> is the hotel de glace located;
+<_pq39> : <_how> many tons of ice are required to build the hotel de glace;
+<_pq40> : <_how> many tons of snow are required to build the hotel de glace;
+<_pq41> : can i visit the hotel de glace in summer;
+<_pq42> : <_where> is canada's only desert;
+<_pq43> : <_how> big is canada's only desert;
+<_pq44> : name 3 famous male canadians;
+<_pq45> : name 3 famous female canadians;
+<_pq46> : <_what> is the origin of the comic sans font;
+<_pq47> : <_what> is a nanobot;
+<_pq48> : <_how> small can a nanobot be;
+<_pq49> : <_why> wasn't tron nominated for an award by the motion picture academy;
+<_pq50> : <_which> was the first computer with a hard disk drive;
+<_pq51> : <_when> was the first computer with a hard disk drive launched; 
+<_pq52> : <_how> big was the first hard disk drive;
+<_pq53> : <_what> does captcha stands for;
+<_pq54> : <_what> was the first computer bug;
+<_pq55> : name all of the robots on mars;
+<_pq56> : <_who> is the world's first android;
+<_pq57> : <_what> is a mechanical knight;
+<_pq58> : <_what> was the first computer in pass the turing test;
+<_pq59> : <_what> does moravec's paradox state;
+<_pq60> : <_what> is the ai knowledge engineering bottleneck;
+<_pq61> : <_why> is elon musk is worried about ai's impact on humanity;
+<_pq62> : <_do> you think robots are a threat to humanity;
+<_pq63> : <_what> is a chatbot;
+<_pq64> : <_are> self driving cars safe;
+<_pq65> : <_which> program do jedi use to open PDF files;
+<_pq66> : <_who> invented the compiler;
+<_pq67> : <_is> mark zuckerberg a robot;
+<_pq68> : <_who> is the inventor of the apple i microcomputer;
+<_pq69> : <_who> is considered to be the first computer programmer;
+
+<_room>: kitchen | dining room | bedroom | living room | corridor | bathroom;
+
+<_manipulationplace> : bed | night table | wardrobe | dresser | armchair | drawer | desk | sideboard | cutlery drawer | dining table | chair | baby chair | bookshelf | sofa | coffee table | center table | bar | fireplace | tv couch | microwave | cupboard | counter | cabinet | sink | stove | fridge | freezer | washing machine | dishwasher | bidet | shower | bathtub | toilet | towel rail | bathroom cabinet | washbasin;  
+
+<_bigobject>: sofa | shelf | <_manipulationplace>;
+<_category_object> :  snacks | food | drinks | toiletries | containers | fruits | cutlery | tableware ;
+
+<_smallobject> : <_snacks> | <_food> | <_drinks> | <_toiletries> | <_containers> | <_tableware> | <_cutlery> | <_fruits>; 
+
+<_snacks> : chips | m and m's | pringles | cookies;
+<_food> : pasta | noodles | tuna fish | pickles | choco flakes | robo o's | muesli;
+<_drinks> : tea | beer | coke | water | milk;
+<_toiletries>: shampoo | soap | cloth | sponge | tooth paste;
+<_containers>: tray | box | bag;
+<_tableware>: big dish | small dish | bowl | glass | mug;
+<_cutlery>: tea spoon | spoon | fork | knife | napkin;
+<_fruits>: apple | melon | banana | pear | peach;
+<_color> : red | blue | white | black | green | yellow ;
+
+
+
+<_how> : how;
+<_what> : what ;
+<_where> : where ;
+<_when> : when ;
+<_which> : which ;
+<_who> : who ;
+<_do> : do ;
+<_is> : is ;
+<_the> : the ;
+<_are> : are ;
+<_number>: number ;
+<_of>: of ;
+<_side>: left | right;
+<_in>: in;
+<_why>: why;
+<_was>: was;
+
+<_vocative> : robot | pepper | maqui;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;

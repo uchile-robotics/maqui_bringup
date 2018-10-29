@@ -1,0 +1,7 @@
+!grammar av_drinks;
+!start <_main_>;
+
+<_main_>:  maqui <_go> | maqui <_stop> | <_noise> [<_noise>] [<_noise>];
+<_go> : go | take the order;
+<_stop> : stop | wait ;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;
