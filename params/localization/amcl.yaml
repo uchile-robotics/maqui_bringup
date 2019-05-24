@@ -143,23 +143,23 @@ odom_model_type: omni-corrected
 
 # Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha1: 0.005
+odom_alpha1: 0.05
 
 # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha2: 0.005
+odom_alpha2: 0.05
 
 # Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha3: 0.01
+odom_alpha3: 0.1
 
 # Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha4: 0.005
+odom_alpha4: 0.05
 
 # Translation-related noise parameter (only used if model is "omni"). 
 # (default: 0.2)
-odom_alpha5: 0.01
+odom_alpha5: 0.1
 
 # Which frame to use for odometry. 
 # (default: "odom")

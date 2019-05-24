@@ -49,7 +49,7 @@ inflation_layer:
 
   # The radius in meters to which the map inflates obstacle cost values. 
   # inflation_radius (double, default: 0.55)
-  inflation_radius: 0.6
+  inflation_radius: 0.3
 
   # A scaling factor to apply to cost values during inflation. The cost 
   # function is computed as follows for all cells in the costmap further
@@ -60,7 +60,7 @@ inflation_layer:
   # NOTE: since the cost_scaling_factor is multiplied by a negative in the
   # formula, increasing the factor will decrease the resulting cost values. 
   # (double, default: 10.0)
-  cost_scaling_factor: 2
+  cost_scaling_factor: 3
 
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -110,7 +110,7 @@ obstacle_layer:
     topic: /maqui/laser,
     expected_update_rate: 1.0,
     observation_persistence: 0.0,
-    marking: true,
+    marking: false,
     clearing: true,
     obstacle_range: 5,
     raytrace_range: 5.5,
@@ -120,9 +120,9 @@ obstacle_layer:
   }
 
   rgbd_scan_sensor: {
-    sensor_frame: /base_footprint,
+    sensor_frame: /laser_virtual,
     data_type: LaserScan,
-    topic: /maqui/camera/scan,
+    topic: /virtual_scan,
     expected_update_rate: 0.0,
     observation_persistence: 0,
     marking: true,

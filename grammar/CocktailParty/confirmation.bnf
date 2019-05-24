@@ -1,0 +1,8 @@
+!grammar confirmation;
+!start <_main_>;
+
+<_main_> : [<_vocative>] <_confirmation> | <_noise>;
+
+<_confirmation> : yes | no | affirmative | negative | yeah | nope | non; 
+<_vocative> : robot | pepper | maqui;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa;
