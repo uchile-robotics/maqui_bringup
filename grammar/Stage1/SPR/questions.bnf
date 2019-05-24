@@ -10,7 +10,9 @@
 <_aq3> : <_how> many <_bigobject>  are in the <_room>;
 <_aq4> : <_how> many doors does <_the> <_room> have;
 
+
 <_cq> : <_cq1> | <_cq2> | <_cq3> | <_cq4> | <_cq5> | <_cq6> | <_cq9> | <_cq10> | <_cq11>;
+
 <_cq1> : <_how> many <_people> are in the crowd ;
 <_cq2> : tell me the number of <_people> in <_the> crowd ;
 
@@ -35,11 +37,14 @@
 <_or_gender> : male or female | man or woman | boy or girl;
 
 <_cq6> : tell me how many people were wearing <_color>;
+
 <_cq9> : <_what> <_is> <_the> <_number> <_of> <_people_gender> and <_people_gender>;
 <_cq10> : <_what> <_is> <_the> <_number> <_of> <_people>;
 <_cq11> : <_what> <_is> <_the> size <_of> the crowd ;
 
+
 <_oq> : <_oq1> | <_oq2> | <_oq3> | <_oq4> | <_oq5> | <_oq6> | <_oq7> | <_oq8> | <_oq9> | <_oq10>;
+
 <_oq1> : <_where> [can] i find [<_a_the>] <_smallobject> ;
 <_oq2> : how many <_category_object> are there;
 <_oq3> : <_what> <_is> <_the> color of <_the> <_smallobject>  ;
@@ -58,6 +63,7 @@
 <_objects_and_category> : <_objects2> | <_category_object>;
 <_object_description> : smallest | lightest | biggest | heaviest;
 <_object_comp> : heavier | lighter | smaller | bigger;
+
 
 <_pq> : <_pq1> | <_pq2> | <_pq3> | <_pq4> | <_pq5> | <_pq6> | <_pq7> | <_pq8> | <_pq9> | <_pq10> | <_pq11> | <_pq12> | <_pq13> | <_pq14> | <_pq15> | <_pq16> | <_pq17> | <_pq18> | <_pq19> | <_pq20> | <_pq21> | <_pq22> | <_pq23> | <_pq24> | <_pq25> | <_pq26> | <_pq27> | <_pq28> | <_pq29> | <_pq30> | <_pq31> | <_pq32> | <_pq33> | <_pq34> | <_pq35> | <_pq36> | <_pq37> | <_pq38> | <_pq39> | <_pq40> | <_pq41> | <_pq42> | <_pq43> | <_pq44> | <_pq45> | <_pq46> | <_pq47> | <_pq48> | <_pq49> | <_pq50>;
 
