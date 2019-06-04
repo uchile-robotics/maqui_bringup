@@ -127,7 +127,7 @@ inflation_layer:
 
   # The radius in meters to which the map inflates obstacle cost values. 
   # inflation_radius (double, default: 0.55)
-  inflation_radius: 0.6
+  inflation_radius: 0.3
 
   # A scaling factor to apply to cost values during inflation. The cost 
   # function is computed as follows for all cells in the costmap further
@@ -138,7 +138,7 @@ inflation_layer:
   # NOTE: since the cost_scaling_factor is multiplied by a negative in the
   # formula, increasing the factor will decrease the resulting cost values. 
   # (double, default: 10.0)
-  cost_scaling_factor: 2
+  cost_scaling_factor: 1
 
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -190,12 +190,27 @@ obstacle_layer:
     observation_persistence: 0.0,
     marking: true,
     clearing: true,
-    obstacle_range: 4.0,
-    raytrace_range: 3.0,
+    obstacle_range: 0.3,
+    raytrace_range: 0.3,
     min_obstacle_height: -1.0,
     max_obstacle_height: 1.5,
     inf_is_valid: true
   }
+
+  rgbd_scan_sensor: {
+    sensor_frame: /laser_virtual,
+    data_type: LaserScan,
+    topic: /virtual_scan,
+    expected_update_rate: 1.0,
+    observation_persistence: 0.0,
+    marking: true,
+    clearing: true,
+    obstacle_range: 1.0,
+    raytrace_range: 5.0,
+    min_obstacle_height: -1.5,
+    max_obstacle_height: 1.5,
+    inf_is_valid: true
+  }  
 
 
 

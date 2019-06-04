@@ -24,7 +24,7 @@ TrajectoryPlannerROS:
  min_in_place_vel_theta: 0.15 # [0..20]
 
  # Cero para no retroceder
- escape_vel: -0.15
+ escape_vel: 0
 
  holonomic_robot: true
  y_vels: [-0.3, -0.25, -0.20, -0.15, -0.1, -0.05, 0.0, 0.05, 0.1, 0.15, 0.20, 0.25, 0.3]  # /* Solo para holonomicos */
@@ -52,7 +52,7 @@ TrajectoryPlannerROS:
  meter_scoring: true # meter or cell scoring
  pdist_scale: 1.5     # path weight
  gdist_scale: 1.0     # local goal weight (also increases speed)
- occdist_scale: 0.05  # obstacle avoidance weight
+ occdist_scale: 0.09  # obstacle avoidance weight
  heading_scoring: false   # whether to use angular/distance scoring to the path
  heading_lookahead: 0.325 # how far to look ahead when scoring in-place rotations
  heading_scoring_timestep: 0.8 # how far to look ahead in time when ...

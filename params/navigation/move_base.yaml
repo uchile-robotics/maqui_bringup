@@ -36,20 +36,20 @@
   # controller_frequency: 20.0
   # The rate in Hz at which to run the control loop and send velocity commands to the base.
 
-  planner_patience: 40.0
+  planner_patience: 20.0
   # How long the planner will wait in seconds in an attempt to find a valid plan before space-clearing operations are performed. 
 
   controller_patience: 20.0
   # How long the controller will wait in seconds without receiving a valid control before space-clearing operations are performed. 
 
-  conservative_reset_dist: 20.0
+  conservative_reset_dist: 5.0
   # Distance away from the robot in meters at which obstacles will be cleared from the costmap when attempting to clear space in the map.
   # Note: Solo para recovery_behaviors no customs, solo para el default
 
   recovery_behavior_enabled: true
   # Whether or not to enable the move_base recovery behaviors to attempt to clear out space. 
 
-  clearing_rotation_allowed: false
+  clearing_rotation_allowed: true
   # Determines whether or not the robot will attempt an in-place rotation when attempting to clear out space.
   # Note: Solo para recovery_behaviors no customs, solo para el default
 
@@ -63,7 +63,14 @@
   # How far [m] the robot must move to be considered not to be oscillating. 
   # Moving this far resets the timer counting up to the ~oscillation_timeout
 
-  planner_frequency: 2.0
+  planner_frequency: 0.0
   # The rate [Hz] at which to run the global planning loop.
   # If the frequency is set to 0.0, the global planner will only run when a new goal is received
   # or the local planner reports that its path is blocked.
+  conservative_reset:
+    reset_distance: 3.0
+    layer_names: ["obstacle_layer"]
+
+  aggressive_reset:
+    reset_distance: 0.3
+    layer_names: ["obstacle_layer"]

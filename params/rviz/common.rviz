@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /navigation1
         - /navigation1/move_base1
+        - /navigation1/move_base1/local_costmap1
         - /navigation1/move_base1/local_planner_dwa1/plan1
         - /sensors1
       Splitter Ratio: 0.72
@@ -556,11 +557,11 @@ Visualization Manager:
                   Class: rviz/Map
                   Color Scheme: costmap
                   Draw Behind: false
-                  Enabled: false
+                  Enabled: true
                   Name: obstacles
                   Topic: /maqui/nav/move_base/local_costmap/costmap
                   Unreliable: false
-                  Value: false
+                  Value: true
                 - Alpha: 1
                   Class: rviz/Polygon
                   Color: 255; 0; 46
@@ -639,6 +640,7 @@ Visualization Manager:
                     X: 0
                     Y: 0
                     Z: 0
+                  Pose Color: 255; 85; 255
                   Pose Style: None
                   Radius: 0.03
                   Shaft Diameter: 0.1
@@ -695,6 +697,7 @@ Visualization Manager:
                     X: 0
                     Y: 0
                     Z: 0
+                  Pose Color: 255; 85; 255
                   Pose Style: None
                   Radius: 0.03
                   Shaft Diameter: 0.1
@@ -841,6 +844,7 @@ Visualization Manager:
                     X: 0
                     Y: 0
                     Z: 0
+                  Pose Color: 255; 85; 255
                   Pose Style: None
                   Radius: 0.03
                   Shaft Diameter: 0.1
@@ -876,6 +880,7 @@ Visualization Manager:
                     X: 0
                     Y: 0
                     Z: 0
+                  Pose Color: 255; 85; 255
                   Pose Style: None
                   Radius: 0.03
                   Shaft Diameter: 0.1
@@ -1442,7 +1447,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 13.1948
+      Distance: 5.39239
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
@@ -1454,10 +1459,10 @@ Visualization Manager:
         Z: 2.52254
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.9498
+      Pitch: 0.8598
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.847245
+      Yaw: 0.897245
     Saved: ~
 Window Geometry:
   2D Bottom:
@@ -1479,7 +1484,7 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1855
-  X: 65
-  Y: 24
+  X: 55
+  Y: -14
   rgbd_head_rgb:
     collapsed: false

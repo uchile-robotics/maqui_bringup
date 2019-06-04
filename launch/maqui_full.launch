@@ -16,16 +16,18 @@
 
 	</include> 
 
-	<include file="$(find pepper_dcm_bringup)/launch/pepper_bringup.launch">
+	<!--include file="$(find pepper_dcm_bringup)/launch/pepper_bringup.launch">
 		<arg name="network_interface" value="$(arg network_interface)"/>
-	</include> 
-
+	</include-->
 	<include file="$(find maqui_bringup)/launch/localization/localization.launch">
 	</include> 
 
 	<include file="$(find maqui_bringup)/launch/navigation/navigation.launch">
 	</include> 
 
+	<include file="$(find uchile_tf)/launch/transformers.launch"/>
+	<include file="$(find uchile_pose_server)/launch/pose_server.launch"/>
+	<include file="$(find uchile_navigation_utils)/launch/pepper_head_fix.launch"/>
 
 
 
