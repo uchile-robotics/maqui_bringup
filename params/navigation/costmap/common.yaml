@@ -60,7 +60,7 @@ inflation_layer:
   # NOTE: since the cost_scaling_factor is multiplied by a negative in the
   # formula, increasing the factor will decrease the resulting cost values. 
   # (double, default: 10.0)
-  cost_scaling_factor: 1
+  cost_scaling_factor: 2
 
 
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =

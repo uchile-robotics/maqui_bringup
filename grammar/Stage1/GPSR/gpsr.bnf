@@ -1,0 +1,101 @@
+!grammar gpsr;
+!start <_main>;
+
+<_main> : [<_vocative>]  <_actions> ;
+
+<_actions> :  <_action_with_persons> | <_action_with_objects>;
+
+
+<_action_with_persons> : <_go_place_find_person_and_interact> | <_find_person_in_place_and_answer_interact> |  <_talk_with_person> | <_tell_something_to_person_at_place> | <_tell_me_name_of_person_in_place> ;
+
+<_interact> : <_tell_something> | <_answer_question>;
+<_tell_something> : <_tell> <_something_to_tell>;
+<_answer_question> : <_answer> [a] <_question> ;
+
+
+<_go_place_find_person_and_interact> : <_go_place_find_person> and <_interact>;
+
+<_go_place_find_person> : <_go_place> <_find_person> ;
+
+<_find_person_in_place_and_answer_interact> : <_find_person_in_place> and <_interact>;
+<_find_person_in_place> : <_find_person> at [the] <_place_or_location> ;
+
+<_find_person> : <_find> <_person> ;
+
+<_talk_with_person> : <_interact> to <_person> in <_place_or_location>;
+<_tell_something_to_person_at_place> : <_tell_something> to <_person> <_in_at> [the] <_place_or_location> ;
+
+<_tell_me_name_of_person_in_place> : <_tell> me the name of the person <_in_at> [the] <_place_or_location>;
+
+
+<_action_with_objects>: <_tell_me_how_many_objects> | <_tell_me_how_many_category> | <_find_object_in_place>;
+<_tell_me_how_many_objects> : <_tell> me how many <_object> there are <_preposition> the <_place_or_location> ;
+<_tell_me_how_many_category> : <_tell> me how many <_category_object> there are <_preposition> the <_place_or_location> ;
+
+<_find_object_in_place> : <_find_object> in [the] <_place_or_location> ;
+<_find_object> : <_find> [the] <_object> ;
+<_objects1> : <_object> | <_category_object>;
+
+
+<_go_place> : <_go> to [the] <_place_or_location>;
+<_preposition> : at | on | in; 
+<_in_at> : in | at;
+<_answer> : answer;
+<_ask> : ask | request;
+<_bring> : bring | take;
+<_go> : go | navigate | enter;
+<_guide> : guide | take ;
+<_find> : find | locate | look for |look;
+<_follow> : follow ;
+<_gesture> : waving ;
+<_gesture_person> : the <_gesture> person ;
+<_grasp> : take | pick up;
+<_give> :  give;
+<_look> : look | find;
+<_person> : a person | someone | <_names>;
+<_put> : put | leave | place ;
+<_question> : question;
+<_tell> : tell| say;
+<_side>: left | right;
+
+<_something_to_tell> : the day of the week | the time | something about yourself | your name | a joke | what day is tomorrow | what day is today | your team's <_team> | the day of the moth;
+
+<_team> : name | country | affiliation;
+
+
+<_place_or_location> : <_room> | <_manipulationplace>;
+
+<_location> : <_bigobject>;
+
+<_object> : <_smallobject>;
+
+<_room>: kitchen | dining room | bedroom | living room | corridor;
+
+<_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table | entrance;  
+
+<_bigobject>: <_manipulationplace> | chair | door | table;
+
+<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | cutlery | tablewares;
+<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_cutlery> | <_tablewares>; 
+
+<_color> : red | blue | white | black | green | yellow ;
+
+<_cleaning_stuff>: cloth | scrubby |sponge;
+<_containers>: basket | tray;
+<_drinks>: chocolate drink | coke | orange juice | grape juice | sprite;
+<_food>: cereal | noodle | sausage;
+<_fruits>:  apple | orange | paprika;
+<_snacks>: crackers | potato chips | pringles;
+<_cutlery>: fork | knife | spoon;
+<_tablewares>: bowl | cup | dish;
+
+<_names> : <_males_names> | <_females_names>;
+
+<_males_names> : alex | charlie | francis | james | john | michael | robert | robin | skyler | william;
+<_females_names> : elizabeth | jennifer | linda | mary | patricia;
+
+<_vocative> :  [<_polite>] [<_robot_name>];
+<_polite> : please | could you; 
+<_robot_name> : robot | pepper | maqui;
+
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;

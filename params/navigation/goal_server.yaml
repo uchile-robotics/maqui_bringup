@@ -7,7 +7,7 @@ base_frame: "/base_footprint"
 tf_buffer_size: 3.0
 
 # tracking parameters
-goal_almost_reach_radius: 0.3
+goal_almost_reach_radius: 0.5
 goal_reach_degree_th: 10.0
 
 # listen topics 

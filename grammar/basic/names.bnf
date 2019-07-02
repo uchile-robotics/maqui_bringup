@@ -1,0 +1,14 @@
+!grammar names;
+!start <_main_>;
+
+<_main_> : [<_response>] <_names>;
+
+<_names> : <_males_names> | <_females_names>;
+
+<_males_names> : alex | charlie | francis | james | john | michael | robert | robin | skyler | william;
+
+<_females_names> : elizabeth | jennifer | linda | mary | patricia;
+
+<_response> : my name is;
+<_vocative> : robot | pepper | maqui;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;

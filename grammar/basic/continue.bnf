@@ -1,0 +1,8 @@
+!grammar confirmation;
+!start <_main_>;
+
+<_main_> : [<_vocative>] <_confirmation> | <_noise>;
+
+<_confirmation> : continue | go on; 
+<_vocative> : pepper | maqui;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa;

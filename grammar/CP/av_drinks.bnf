@@ -1,0 +1,12 @@
+!grammar av_drinks;
+!start <_main_>;
+ 
+<_main_> : <_av_drinks_sentence>;
+
+<_av_drinks_sentence> : [<_av_drinks_phrase>] <_drinks> [<_drinks>] [<_drinks>] [<_drinks>];
+
+<_av_drinks_phrase> : the available drinks are ;
+
+<_drinks> : coke | sprite | chocolate drink | orange juice | grape juice ;
+
+

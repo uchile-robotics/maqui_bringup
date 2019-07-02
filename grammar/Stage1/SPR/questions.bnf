@@ -1,0 +1,159 @@
+!grammar spr;
+!start <_main_>;
+
+<_main_> : [<_vocative>] <_questions> | <_noise> [<_noise>] [<_noise>];
+<_questions> : <_aq> | <_cq> | <_oq> | <_pq>;
+
+<_aq> : <_aq1> | <_aq2> | <_aq3> | <_aq4> ; 
+<_aq1> : <_where> is [<_the>] <_bigobject> [located];
+<_aq2> : in <_which> room is <_the> <_bigobject>;
+<_aq3> : <_how> many <_bigobject>  are in the <_room>;
+<_aq4> : <_how> many doors does <_the> <_room> have;
+
+
+<_cq> : <_cq1> | <_cq2> | <_cq3> | <_cq4> | <_cq5> | <_cq6> | <_cq9> | <_cq10> | <_cq11>;
+
+<_cq1> : <_how> many <_people> are in the crowd ;
+<_cq2> : tell me the number of <_people> in <_the> crowd ;
+
+<_people> : people | <_people_phase> | <_people_gender>;
+<_people_phase> : children | adults | elders;
+<_people_gender> : women | men | males | females | boys | girls ;
+
+<_cq3> : <_how> many people in the crowd are <_gestures_or_postures>;
+
+<_gestures_or_postures> : <_people_gestures> | <_people_postures> | <_or_postures>;
+<_pp_gestures_postures> :<_people_gestures> | <_people_postures>;
+<_people_gestures> : waving | raising their left arm | raising their right arm | pointing left | pointing right;
+<_people_postures> : standing | sitting | lying down;
+<_or_postures> : standing or lying down| standing or sitting | sitting or lying down;
+
+<_cq4> : was the person <_people_postures> a <_or_gender>;
+<_cq5> : tell me if the person <_pp_gestures_postures> was a <_person_gender>;
+
+<_person> : <_person_phase> | <_person_gender> | <_or_gender>;
+<_person_gender> : male | female | man | woman | boy | girl;
+<_person_phase> : adult | child | elder;
+<_or_gender> : male or female | man or woman | boy or girl;
+
+<_cq6> : tell me how many people were wearing <_color>;
+
+<_cq9> : <_what> <_is> <_the> <_number> <_of> <_people_gender> and <_people_gender>;
+<_cq10> : <_what> <_is> <_the> <_number> <_of> <_people>;
+<_cq11> : <_what> <_is> <_the> size <_of> the crowd ;
+
+
+<_oq> : <_oq1> | <_oq2> | <_oq3> | <_oq4> | <_oq5> | <_oq6> | <_oq7> | <_oq8> | <_oq9> | <_oq10>;
+
+<_oq1> : <_where> [can] i find [<_a_the>] <_smallobject> ;
+<_oq2> : how many <_category_object> are there;
+<_oq3> : <_what> <_is> <_the> color of <_the> <_smallobject>  ;
+<_oq4> : <_how> many <_objects> are in the <_manipulationplace>;
+<_oq5> : <_what> objects are [stored] in <_the> <_manipulationplace> ;
+<_oq6> : <_where> [can] i find  <_a_the>  <_objects_and_category> ;
+<_oq7> : <_what> is the category of <_the> <_smallobject>;
+<_oq8> : <_do> <_the> <_smallobject> and <_smallobject> belong to the same category;
+<_oq9> : <_which> is the <_object_description> <_objects>;
+<_oq10> : between the <_smallobject> and <_smallobject> which one is <_object_comp>;
+
+<_a_the> : a | <_the>;
+
+<_objects> : object | <_category_object>;
+<_objects2> : <_smallobject> |  <_bigobject>;
+<_objects_and_category> : <_objects2> | <_category_object>;
+<_object_description> : smallest | lightest | biggest | heaviest;
+<_object_comp> : heavier | lighter | smaller | bigger;
+
+
+<_pq> : <_pq1> | <_pq2> | <_pq3> | <_pq4> | <_pq5> | <_pq6> | <_pq7> | <_pq8> | <_pq9> | <_pq10> | <_pq11> | <_pq12> | <_pq13> | <_pq14> | <_pq15> | <_pq16> | <_pq17> | <_pq18> | <_pq19> | <_pq20> | <_pq21> | <_pq22> | <_pq23> | <_pq24> | <_pq25> | <_pq26> | <_pq27> | <_pq28> | <_pq29> | <_pq30> | <_pq31> | <_pq32> | <_pq33> | <_pq34> | <_pq35> | <_pq36> | <_pq37> | <_pq38> | <_pq39> | <_pq40> | <_pq41> | <_pq42> | <_pq43> | <_pq44> | <_pq45> | <_pq46> | <_pq47> | <_pq48> | <_pq49> | <_pq50>;
+
+<_pq1> : <_who> created the C programming language;
+<_pq2> : <_who> created the python programming language;
+<_pq3> : <_who> is the most handsome person in canada;
+<_pq4> : <_how> many time zones are there in canada;
+<_pq5> : <_what> is the longest street in the world;
+<_pq6> : <_how> long is Yonge Street in Ontario;
+<_pq7> : <_what> is the name of the bear cub exported from Canada to the London Zoo in 1915;
+<_pq8> : <_where> <_was> the blackberry smartphone developed;
+<_pq9> : <_what> is the world's largest coin;
+<_pq10> : <_what> year was canada invaded by the usa for the second time;
+<_pq11> : <_what> year was canada invaded by the usa for the first time;
+<_pq12> : <_what> country holds the record for the most gold medals at the Winter Olympics;
+<_pq13> : <_are> self driving cars safe;
+<_pq14> : <_which> program do jedi use to open PDF files;
+<_pq15> : <_who> invented the compiler;
+<_pq16> : <_is> mark zuckerberg a robot;
+<_pq17> : <_who> is the inventor of the apple i microcomputer;
+<_pq18> : <_who> is considered to be the first computer programmer;
+<_pq19> : <_why> is canada named canada;
+<_pq20> : <_who> coined the term beatlemania;
+<_pq21> : <_when> was the mounted police formed;
+<_pq22> : <_when> was the royal canadian mounted police formed;
+<_pq23> : <_how> big is the RCMP;
+<_pq24> : <_what> else is Montreal called;
+<_pq25> : <_where> is the hotel de glace located;
+<_pq26> : <_how> many tons of ice are required to build the hotel de glace;
+<_pq27> : <_how> many tons of snow are required to build the hotel de glace;
+<_pq28> : can i visit the hotel de glace in summer;
+<_pq29> : <_where> is canada's only desert;
+<_pq30> : <_how> big is canada's only desert;
+<_pq31> : name 3 famous male canadians;
+<_pq32> : name 3 famous female canadians;
+<_pq33> : <_what> is the origin of the comic sans font;
+<_pq34> : <_what> is a nanobot;
+<_pq35> : <_how> small can a nanobot be;
+<_pq36> : <_why> wasn't tron nominated for an award by the motion picture academy;
+<_pq37> : <_which> was the first computer with a hard disk drive;
+<_pq38> : <_when> was the first computer with a hard disk drive launched; 
+<_pq39> : <_how> big was the first hard disk drive;
+<_pq40> : <_what> does captcha stands for;
+<_pq41> : <_what> was the first computer bug;
+<_pq42> : name all of the robots on mars;
+<_pq43> : <_who> is the world's first android;
+<_pq44> : <_what> is a mechanical knight;
+<_pq45> : <_what> was the first computer to pass the turing test;
+<_pq46> : <_what> does moravec's paradox state;
+<_pq47> : <_what> is the ai knowledge engineering bottleneck;
+<_pq48> : <_why> is elon musk worried about ai's impact on humanity;
+<_pq49> : <_do> you think robots are a threat to humanity;
+<_pq50> : <_what> is a chatbot;
+
+<_room>: kitchen | dining room | bedroom | living room | corridor;
+
+<_manipulationplace> : bed | desk | side table | dining table | bookcase | couch | end table | lamp | cupboard | counter | dishwasher | sink |storage table | entrance;  
+
+<_bigobject>: <_manipulationplace> | chair | door | table;
+
+<_category_object> :  snacks | food | drinks | cleaning stuff | containers | fruits | cutlery | tablewares;
+<_smallobject> : <_snacks> | <_food> | <_drinks> | <_cleaning_stuff> | <_containers> | <_fruits> | <_cutlery> | <_tablewares>; 
+
+<_color> : red | blue | white | black | green | yellow ;
+
+<_cleaning_stuff>: cloth | scrubby |sponge;
+<_containers>: basket | tray;
+<_drinks>: chocolate drink | coke | orange juice | grape juice | sprite;
+<_food>: cereal | noodle | sausage;
+<_fruits>:  apple | orange | paprika;
+<_snacks>: crackers | potato chips | pringles;
+<_cutlery>: fork | knife | spoon;
+<_tablewares>: bowl | cup | dish;
+
+<_how> : how;
+<_what> : what ;
+<_where> : where ;
+<_when> : when ;
+<_which> : which ;
+<_who> : who ;
+<_do> : do ;
+<_is> : is ;
+<_the> : the ;
+<_are> : are ;
+<_number>: number ;
+<_of>: of ;
+<_side>: left | right;
+<_in>: in;
+<_why>: why;
+<_was>: was;
+
+<_vocative> : robot | pepper | maqui;
+<_noise> :  hum | wa | sh | ch | s | mm | pu | tu | ss | huh | naa ;

@@ -15,7 +15,7 @@
 # min/max allowed number of particles.
 # (default: 100, 5000)
 min_particles: 100
-max_particles: 5000
+max_particles: 1000
 
 # max error between the true distribution and the estimated distribution. 
 # (default: 0.01)
@@ -28,7 +28,7 @@ kld_z: 0.99
 
 # Translational movement required before performing a filter update. [m]
 # (default: 0.2 [m])
-update_min_d: 0.05 # 5cm
+update_min_d: 0.1 # 5cm
 
 # Rotational movement required before performing a filter update. [rad]
 # (default: pi/6 [rad])
@@ -41,7 +41,7 @@ resample_interval: 1
 # Time with which to post-date the transform that is published, to indicate that this transform
 # is valid into the future. 
 # (default: 0.1 [s])
-transform_tolerance: 0.1
+transform_tolerance: 0.2
 
 # Exponential decay rate for the slow average weight filter, used in deciding when to recover by
 # adding random poses. A good value might be 0.001.
@@ -85,11 +85,11 @@ first_map_only: true
 # min/max scan range to be considered; -1.0 will cause the laser's reported min/max range to be used. 
 # (default: -1, -1)
 laser_min_range: -1.0
-laser_max_range: -1.0
+laser_max_range:  2.0
 
 # How many evenly-spaced beams in each scan to be used when updating the filter. 
 # (default: 30)
-laser_max_beams: 30
+laser_max_beams: 60
 
 # Mixture weight for the z_hit part of the model. 
 # (default: 0.95)
@@ -143,23 +143,23 @@ odom_model_type: omni-corrected
 
 # Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha1: 0.05
+odom_alpha1: 0.02
 
 # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha2: 0.05
+odom_alpha2: 0.02
 
 # Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha3: 0.1
+odom_alpha3: 0.02
 
 # Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
-odom_alpha4: 0.05
+odom_alpha4: 0.02
 
 # Translation-related noise parameter (only used if model is "omni"). 
 # (default: 0.2)
-odom_alpha5: 0.1
+odom_alpha5: 0.01
 
 # Which frame to use for odometry. 
 # (default: "odom")
