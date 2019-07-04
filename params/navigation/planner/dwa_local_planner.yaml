@@ -21,7 +21,7 @@ DWAPlannerROS:
  min_trans_vel:  0.0 # [  0 ..inf]
  max_vel_x    :  0.5 # [-inf..inf]
  min_vel_x    : -0.1 # [-inf..inf]
- max_rot_vel  :  0.7 # [  0 ..inf]
+ max_rot_vel  :  0.3 # [  0 ..inf]
  min_rot_vel  :  0.0 # [  0 ..inf]
  max_vel_y    :  0.0 # [-inf..inf]
  min_vel_y    :  0.0 # [-inf..inf]

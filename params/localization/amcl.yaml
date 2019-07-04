@@ -89,7 +89,7 @@ laser_max_range:  2.0
 
 # How many evenly-spaced beams in each scan to be used when updating the filter. 
 # (default: 30)
-laser_max_beams: 60
+laser_max_beams: 30
 
 # Mixture weight for the z_hit part of the model. 
 # (default: 0.95)
@@ -143,7 +143,6 @@ odom_model_type: omni-corrected
 
 # Specifies the expected noise in odometry's rotation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
-<<<<<<< HEAD
 odom_alpha1: 0.02
 
 # Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion. 
@@ -157,25 +156,10 @@ odom_alpha3: 0.02
 # Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion. 
 # (default: 0.2)
 odom_alpha4: 0.02
-=======
-odom_alpha1: 0.05
-
-# Specifies the expected noise in odometry's rotation estimate from translational component of the robot's motion. 
-# (default: 0.2)
-odom_alpha2: 0.05
-
-# Specifies the expected noise in odometry's translation estimate from the translational component of the robot's motion. 
-# (default: 0.2)
-odom_alpha3: 0.1
-
-# Specifies the expected noise in odometry's translation estimate from the rotational component of the robot's motion. 
-# (default: 0.2)
-odom_alpha4: 0.05
->>>>>>> 0f0e52eb7d8451a49b54692ef3cd9a0ca7604458
 
 # Translation-related noise parameter (only used if model is "omni"). 
 # (default: 0.2)
-odom_alpha5: 0.1
+odom_alpha5: 0.01
 
 # Which frame to use for odometry. 
 # (default: "odom")

@@ -13,15 +13,15 @@ TrajectoryPlannerROS:
  # accel limits
  acc_lim_x: 0.50     # [0..20]
  acc_lim_y: 0.50     # [0..20]
- acc_lim_theta: 0.90 # [0..20]
+ acc_lim_theta: 0.50 # [0..20]
 
 
  # vel limits
  max_vel_x: 0.25      # [0..20]
  min_vel_x: 0.05      # [0..20]
- max_vel_theta:  0.25  # [0..20]
- min_vel_theta: -0.25  # [-20..0]
- min_in_place_vel_theta: 0.15 # [0..20]
+ max_vel_theta:  0.15  # [0..20]
+ min_vel_theta: -0.15  # [-20..0]
+ min_in_place_vel_theta: 0.08 # [0..20]
 
  # Cero para no retroceder
  escape_vel: 0
