@@ -19,7 +19,7 @@
           <remap from="depth/image"     to="/maqui/camera/depth/image_raw"/>
           <remap from="rgb/camera_info" to="/maqui/camera/front/camera_info"/>
 
-          <param name="queue_size" type="int" value="10"/>
+          <param name="queue_size" type="int" value="15"/>
 
           <!-- RTAB-Map's parameters -->
           <param name="RGBD/ProximityBySpace"     type="string" value="false"/>

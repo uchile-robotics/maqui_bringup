@@ -68,7 +68,7 @@ origin_y: 0.0
 # Static Obstacles Layer
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 static_layer:
-  map_topic: "/maqui/knowledge/map/map_full"
+  map_topic: "map"
   first_map_only: true
   subscribe_to_updates: false
   track_unknown_space: true

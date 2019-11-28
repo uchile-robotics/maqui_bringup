@@ -1,6 +1,6 @@
 <launch>
 
-	<arg name="slam" default="false"/>
+	<arg name="slam" default="true"/>
 
 	<!-- Goal Server -->
 	<node pkg="uchile_nav" type="goal_server" name="goal_server" output="screen" respawn="true" ns="/maqui/nav/">

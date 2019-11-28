@@ -45,6 +45,7 @@
 
 		<!-- remapping -->
 		<remap from="cmd_vel" to="/cmd_vel"/>
+		<remap from="map" to="/rtabmap/grid_map"/>
 
 	</node>
 
