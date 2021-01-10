@@ -1,6 +1,6 @@
 <launch>  
 
-    <arg name="map_name"  default="lab"/>
+    <arg name="map_name"  default="mapa_1"/>
 
     <!-- static map server -->
     <include file="$(find uchile_maps)/launch/map_server.launch">
