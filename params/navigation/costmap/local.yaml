@@ -18,7 +18,7 @@ plugins:
 
 # The global frame for the costmap to operate in.
 # (string, default: "/map")
-global_frame: /odom
+global_frame: odom
 
 
 # Rate parameters
@@ -68,7 +68,7 @@ origin_y: 0.0
 # Static Obstacles Layer
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 static_layer:
-  map_topic: "map"
+  map_topic: "/maqui/knowledge/map/map_full"
   first_map_only: true
   subscribe_to_updates: false
   track_unknown_space: true

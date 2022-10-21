@@ -2,8 +2,8 @@
 # if not specified, all parameters are in [m],[s] 
 
 # tf info
-map_frame: "/map"
-base_frame: "/base_footprint"
+map_frame: "map"
+base_frame: "base_footprint"
 tf_buffer_size: 3.0
 
 # tracking parameters

@@ -18,7 +18,7 @@ plugins:
 
 # The global frame for the costmap to operate in.
 # global_frame (string, default: "/map")
-global_frame: /map
+global_frame: map
     
 
 # Rate parameters
@@ -88,7 +88,7 @@ static_layer:
   # is useful when you have multiple costmap instances within a single node 
   # that you want to use different static maps. - New in navigation 1.3.1 
   # map_topic (string, default: "map")
-  map_topic: "map"
+  map_topic: "/maqui/knowledge/map/map_full"
 
   # Only subscribe to the first message on the map topic, ignoring all 
   # subsequent messages 
