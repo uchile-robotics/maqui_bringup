@@ -4,16 +4,16 @@
   recovery_behaviors: [
     {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery},
     {name: aggressive_reset,   type: clear_costmap_recovery/ClearCostmapRecovery},
-    #{name: twist_left_down,    type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_right_down,   type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_down_1,       type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_right_1,      type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_down_2,       type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_right_2,      type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_down_3,       type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_right_up,     type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_up_1,         type: uchile_twist_recovery/TwistRecovery},
-    #{name: twist_left_up,      type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_left_down,    type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_right_down,   type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_down_1,       type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_right_1,      type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_down_2,       type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_right_2,      type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_down_3,       type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_right_up,     type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_up_1,         type: uchile_twist_recovery/TwistRecovery},
+    {name: twist_left_up,      type: uchile_twist_recovery/TwistRecovery},
     {name: twist_up_2,         type: uchile_twist_recovery/TwistRecovery},
     {name: rotate_recovery,    type: rotate_recovery/RotateRecovery},
   ]
@@ -39,7 +39,7 @@
   planner_patience: 20.0
   # How long the planner will wait in seconds in an attempt to find a valid plan before space-clearing operations are performed. 
 
-  controller_patience: 20.0
+  controller_patience: 5.0
   # How long the controller will wait in seconds without receiving a valid control before space-clearing operations are performed. 
 
   conservative_reset_dist: 5.0
@@ -49,7 +49,7 @@
   recovery_behavior_enabled: true
   # Whether or not to enable the move_base recovery behaviors to attempt to clear out space. 
 
-  clearing_rotation_allowed: true
+  clearing_rotation_allowed: false
   # Determines whether or not the robot will attempt an in-place rotation when attempting to clear out space.
   # Note: Solo para recovery_behaviors no customs, solo para el default
 
@@ -67,10 +67,10 @@
   # The rate [Hz] at which to run the global planning loop.
   # If the frequency is set to 0.0, the global planner will only run when a new goal is received
   # or the local planner reports that its path is blocked.
-  conservative_reset:
-    reset_distance: 3.0
-    layer_names: ["obstacle_layer"]
+  # conservative_reset:
+  #   reset_distance: 3.0
+  #   layer_names: ["obstacle_layer"]
 
-  aggressive_reset:
-    reset_distance: 0.1
-    layer_names: ["obstacle_layer"]
+  # aggressive_reset:
+  #   reset_distance: 0.1
+  #   layer_names: ["obstacle_layer"]
