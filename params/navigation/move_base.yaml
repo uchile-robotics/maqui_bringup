@@ -1,5 +1,5 @@
 
-/maqui/nav/move_base:
+/maqui/nav/move_base/cmd_vel:
 
   recovery_behaviors: [
     {name: conservative_reset, type: clear_costmap_recovery/ClearCostmapRecovery},
