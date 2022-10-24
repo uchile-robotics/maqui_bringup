@@ -14,7 +14,7 @@ footprint_padding: 0.01
 
 # The name of the frame for the base link of the robot.
 # robot_base_frame (string, default: "base_link")
-robot_base_frame: /base_footprint
+robot_base_frame: base_footprint
 
 #   Specifies the delay in transform (tf) data that is tolerable in seconds.
 #   This parameter serves as a safeguard to losing a link in the tf tree while
@@ -106,7 +106,7 @@ obstacle_layer:
   # required to work
   # required to work
   laser_sensor: {
-    sensor_frame: /base_footprint,
+    sensor_frame: base_footprint,
     data_type: LaserScan,
     topic: /maqui/laser,
     expected_update_rate: 1.0,
