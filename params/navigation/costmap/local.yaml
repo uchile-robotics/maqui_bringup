@@ -68,7 +68,7 @@ origin_y: 0.0
 # Static Obstacles Layer
 # = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 static_layer:
-  map_topic: "/maqui/knowledge/map/map_full"
+  map_topic: "/map"
   first_map_only: true
   subscribe_to_updates: false
   track_unknown_space: true
@@ -197,20 +197,20 @@ obstacle_layer:
     inf_is_valid: true
   }
 
-  rgbd_scan_sensor: {
-    sensor_frame: /laser_virtual,
-    data_type: LaserScan,
-    topic: /virtual_scan,
-    expected_update_rate: 1.0,
-    observation_persistence: 0.0,
-    marking: true,
-    clearing: true,
-    obstacle_range: 1.0,
-    raytrace_range: 5.0,
-    min_obstacle_height: -1.5,
-    max_obstacle_height: 1.5,
-    inf_is_valid: true
-  }  
+  # rgbd_scan_sensor: {
+  #   sensor_frame: laser_virtual,
+  #   data_type: LaserScan,
+  #   topic: /virtual_scan,
+  #   expected_update_rate: 1.0,
+  #   observation_persistence: 0.0,
+  #   marking: true,
+  #   clearing: true,
+  #   obstacle_range: 1.0,
+  #   raytrace_range: 5.0,
+  #   min_obstacle_height: -1.5,
+  #   max_obstacle_height: 1.5,
+  #   inf_is_valid: true
+  # }  
 
 
 
