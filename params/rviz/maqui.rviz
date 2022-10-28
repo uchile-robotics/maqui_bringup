@@ -11,12 +11,9 @@ Panels:
         - /knowledge1/map_analyzer1
         - /knowledge1/map_analyzer1/map_data1
         - /navigation1/move_base1
-        - /navigation1/move_base1/global_costmap1/obstacles1
         - /navigation1/move_base1/global_planner_navfn1/plan1
         - /navigation1/move_base1/global_planner_global1/plan1
         - /navigation1/move_base1/local_planner_dwa1/plan1
-        - /sensors1
-        - /sensors1/laser_front1
       Splitter Ratio: 0.32595598697662354
     Tree Height: 494
   - Class: rviz/Selection
@@ -563,16 +560,6 @@ Visualization Manager:
           Displays:
             - Class: rviz/Group
               Displays:
-                - Alpha: 0.699999988079071
-                  Class: rviz/Map
-                  Color Scheme: costmap
-                  Draw Behind: false
-                  Enabled: true
-                  Name: obstacles
-                  Topic: /maqui/nav/move_base/local_costmap/costmap
-                  Unreliable: false
-                  Use Timestamp: false
-                  Value: true
                 - Alpha: 1
                   Class: rviz/Polygon
                   Color: 255; 0; 46
@@ -613,16 +600,6 @@ Visualization Manager:
               Name: local_costmap
             - Class: rviz/Group
               Displays:
-                - Alpha: 0.949999988079071
-                  Class: rviz/Map
-                  Color Scheme: costmap
-                  Draw Behind: true
-                  Enabled: true
-                  Name: obstacles
-                  Topic: /maqui/nav/move_base/global_costmap/costmap
-                  Unreliable: false
-                  Use Timestamp: false
-                  Value: true
                 - Alpha: 1
                   Class: rviz/Polygon
                   Color: 0; 0; 0
@@ -886,7 +863,7 @@ Visualization Manager:
                   Radius: 0.029999999329447746
                   Shaft Diameter: 0.10000000149011612
                   Shaft Length: 0.10000000149011612
-                  Topic: /maqui/nav/move_base/TrajectoryPlannerROS/local_plan
+                  Topic: /move_base/DWAPlannerROS/global_plan
                   Unreliable: false
                   Value: true
                 - Alpha: 1
@@ -1225,7 +1202,7 @@ Visualization Manager:
           Size (Pixels): 5
           Size (m): 0.009999999776482582
           Style: Points
-          Topic: /maqui/laser/front
+          Topic: /maqui/lasers
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
@@ -1432,11 +1409,46 @@ Visualization Manager:
           Value: true
       Enabled: false
       Name: perception
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /move_base/global_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: raw
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /move_base/local_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.10000000149011612
+      Name: Pose
+      Shaft Length: 1
+      Shaft Radius: 0.05000000074505806
+      Shape: Arrow
+      Topic: /maqui/nav/goal_server/goal
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 216; 216; 216
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -1460,25 +1472,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.663065195083618
+      Distance: 5.665535926818848
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 1.531793236732483
-        Y: -0.3531738817691803
-        Z: 1.549494981765747
+        X: 1.7124152183532715
+        Y: -0.7943692207336426
+        Z: 1.1652218103408813
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.9952020049095154
+      Pitch: 0.8402021527290344
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.969069957733154
+      Yaw: 4.649067401885986
     Saved: ~
 Window Geometry:
   2D Bottom:
