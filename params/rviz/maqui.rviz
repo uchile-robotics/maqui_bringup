@@ -16,7 +16,6 @@ Panels:
         - /navigation1/move_base1/global_planner_global1/plan1
         - /navigation1/move_base1/local_planner_dwa1/plan1
         - /sensors1
-        - /sensors1/LaserScan Depth1
         - /sensors1/laser_front1
       Splitter Ratio: 0.32595598697662354
     Tree Height: 494
@@ -37,7 +36,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: laser_front
+    SyncSource: Scans To Floor
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -156,6 +155,10 @@ Visualization Manager:
           Show Trail: false
           Value: true
         ImuBaseAccelerometer_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        ImuBaseGyrometer_frame:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -1142,7 +1145,7 @@ Visualization Manager:
           Size (Pixels): 10
           Size (m): 0.009999999776482582
           Style: Points
-          Topic: /virtual_scan
+          Topic: /maqui/laser
           Unreliable: false
           Use Fixed Frame: true
           Use rainbow: true
