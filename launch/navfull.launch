@@ -1,0 +1,11 @@
+<launch>
+
+	<include file="$(find maqui_bringup)/launch/localization/localization.launch">
+	</include> 
+
+	<include file="$(find maqui_bringup)/launch/navigation/navigation.launch">
+	</include> 
+
+	<include file="$(find uchile_pose_server)/launch/pose_server.launch"/>
+
+</launch>

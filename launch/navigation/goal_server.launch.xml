@@ -9,12 +9,12 @@
 		<rosparam file="$(find maqui_bringup)/params/navigation/goal_server.yaml"/>
 
 		<!-- correct if necessary -->
-		<!--
+		
 		<param name="is_map_static" value="false"                  if="$(arg slam)"/>
 		<param name="map_service"   value="/maqui/nav/dynamic_map" if="$(arg slam)"/>
 
 		<remap from="goal_server/make_plan" to="/maqui/nav/move_base/make_plan"/>
-		-->
+		
 		<!-- remap services -->
 	</node>
 
