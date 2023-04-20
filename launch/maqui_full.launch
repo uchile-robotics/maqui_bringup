@@ -1,6 +1,5 @@
 <launch>
 
-
 	<arg name="maqui_ip"   default="$(env robot_ip)"/>
 	<arg name="roscore_ip" default="$(env ROS_IP)"/>
 	<arg name="network_interface" default="wlan0"/>

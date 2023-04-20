@@ -8,7 +8,7 @@
     <arg name="type"      default="amcl"/> 
 
     <!-- This is the name of the map to be loaded on the map server -->
-    <arg name="map_name"  default="mapa_1"/>
+    <arg name="map_name"  default="entrance_map"/>
 
 
 

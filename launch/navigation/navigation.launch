@@ -1,18 +1,27 @@
 <launch>
+  <!-- Arguments -->
 
-	<!-- Parametros -->
-	<arg name="slam"         default="false"/>
-	<arg name="use_rgbd"     default="false"/>
+  <arg name="move_forward_only" default="true"/>
+  <!--arg name="map_name"  default="mapa_robocup_19"/-->
+  <arg name="map_name"  default="entrance_map"/>
 
-	<!-- Move_Base -->
-	<include file="$(find maqui_bringup)/launch/navigation/move_base.launch.xml">
-		<arg name="slam" value="$(arg slam)"/>
-		<arg name="use_rgbd" value="$(arg use_rgbd)"/>
-	</include>
 
-	<!-- Goal Server -->
-	<include file="$(find maqui_bringup)/launch/navigation/goal_server.launch.xml">
-		<arg name="slam" value="$(arg slam)"/>
-	</include>
+      <!-- static map server -->
+  <!--include file="$(find uchile_maps)/launch/map_server.launch">
+        <arg name="map_name" value="$(arg map_name)"/>
+	<arg name="robot" value="kobuki"/>
+  </include-->
+
+  	<!-- Map Server -->
+	<node pkg="map_server" type="map_server" name="map_server_2"
+		respawn="true" args="$(find uchile_maps)/maps/$(arg map_name).yaml"/>
+
+  <!-- move_base -->
+
+  <include file="$(find maqui_bringup)/launch/navigation/move_base.launch">
+        <!--remap from="cmd_vel" to="pico"/-->
+        <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
 
 </launch>

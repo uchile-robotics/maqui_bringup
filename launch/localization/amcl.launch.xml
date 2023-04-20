@@ -1,6 +1,6 @@
 <launch>
 
-    <arg name="map_name"  default="mapa_1"/>
+    <arg name="map_name"  default="map_noviembre"/>
 
     <!-- static map server -->
     <include file="$(find uchile_maps)/launch/map_server.launch">
@@ -11,15 +11,15 @@
     <!-- <include file="$(find uchile_maps)/launch/map_analyzer.launch"/> -->
 
     <!-- amcl -->
-    <node pkg="amcl" type="amcl" name="amcl" ns="/maqui/nav/" respawn="true" output="screen">
+    <node pkg="amcl" type="amcl" name="amcl"  respawn="true" output="screen">
         <remap from="scan" to="/maqui/laser"/>
         <remap from="map" to="/map"/>
         <rosparam file="$(find maqui_bringup)/params/localization/amcl.yaml" command="load"/>
 	</node>
 
     <!-- lasers relay -->
-	<node pkg="topic_tools" type="relay" name="amcl_laser_scan_relay" ns="/maqui/nav/"
-		args="/virtual_scan /maqui/nav/amcl/scan"/>
+	<!-- <node pkg="topic_tools" type="relay" name="amcl_laser_scan_relay" ns="/maqui/nav/"
+		args="/virtual_scan /maqui/nav/amcl/scan"/> -->
 	
 	<!-- rgbd scan relay -->
 	<!-- <node pkg="topic_tools" type="relay" name="amcl_scan_front_relay" ns="/maqui/nav/" args="/maqui/camera/scan /maqui/nav/amcl/scan"/> -->

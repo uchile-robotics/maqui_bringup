@@ -13,12 +13,12 @@ delta_yaw: 0
 
 # global_frame_id (string, default: /map)
 # The frame in which to publish the global_frame_id-odom_frame_id transform over tf. New in 1.1.3.
-global_frame_id: "/map"
+global_frame_id: "map"
 
 # odom_frame_id (string, default: "odom")
 # The name of the odometric frame of the robot. 
-odom_frame_id: "/odom"
+odom_frame_id: "odom"
 
 # base_frame_id (string, default: base_link)
 # The base frame of the robot. New in 1.1.3
-base_frame_id: "/base_footprint"
+base_frame_id: "base_link"
