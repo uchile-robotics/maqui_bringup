@@ -5,11 +5,13 @@ import json
 from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 
-class chat_test():
+class gpt_manager():
     def __init__(self):
         self.subscriber = rospy.Subscriber('/chatbot/input', String, self._callback)
         self.publisher = rospy.Publisher('/chatbot/output', String , queue_size=10)
-        self.api_key = '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'
+        
+        
+        self.api_key = '' # TODO: Implementar buenas practicas de llaves XD
         
     def _callback(self, msg):
         with open('./memory.json', 'r+') as memory_file:
@@ -44,9 +46,8 @@ class chat_test():
             memory_file.close()
 
 def main():
-
-    rospy.init_node('chat_test')
-    chat_test()
+    rospy.init_node('gpt_manager')
+    gpt_manager()
     rospy.spin()
 
 if __name__ == '__main__':

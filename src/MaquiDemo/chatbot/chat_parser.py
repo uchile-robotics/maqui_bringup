@@ -1,23 +1,20 @@
 #!/usr/bin/env python3.9
-import argparse
-import openai
+import rospy
+from std_msgs.msg import String
+from geometry_msgs.msg import Twist
+
+class speech_manager():
+    def __init__(self):
+        self.subscriber = rospy.Subscriber('/maqui/speech_recognition/input', String, self._callback)
+        self.publisher = rospy.Publisher('/maqui/speech_recognition/output', String , queue_size=10)
+
+    def _callback(self, msg):
+        self.publisher.publish(msg)
 
 def main():
-    parser = argparse.ArgumentParser(description='Chat parser para el chat de pepper')
-    parser.add_argument('-m','--message', help='Message to be sent for ChatGPT', required=True)
-
-    msg = parser.parse_args()['message']
-
-    openai.api_key = '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'
-    model="gpt-3.5-turbo"
-
-    chat = msg
-
-    messages = [{"role": "system", "content": "You are a robot called maqui, your model is Pepper from Softbank robotics. You give short answers of no more than 50 words."},
-                {"role": "user", "content": chat}]
-    reply = openai.ChatCompletion.create(model=model, messages=messages)
-
-    return reply["choices"][0]["message"]["content"]
+    rospy.init_node('speech_manager')
+    speech_manager()
+    rospy.spin()
 
 if __name__ == '__main__':
     main()
