@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /RobotModel1/Links1
-        - /LaserScan1/Status1
       Splitter Ratio: 0.5
     Tree Height: 424
   - Class: rviz/Selection
@@ -619,8 +618,6 @@ Visualization Manager:
           Value: true
         l_wrist:
           Value: true
-        map:
-          Value: true
         odom:
           Value: true
         r_gripper:
@@ -635,145 +632,144 @@ Visualization Manager:
       Show Axes: false
       Show Names: false
       Tree:
-        map:
-          odom:
-            base_link:
-              torso:
-                ChestButton_frame:
-                  {}
-                Hip:
-                  Pelvis:
-                    Tibia:
-                      BumperB_frame:
-                        {}
-                      BumperFL_frame:
-                        {}
-                      BumperFR_frame:
-                        {}
-                      ImuBaseAccelerometer_frame:
-                        {}
-                      ImuBaseGyrometer_frame:
-                        {}
-                      ShovelLaser_frame:
-                        {}
-                      SonarBack_frame:
-                        {}
-                      SonarFront_frame:
-                        {}
-                      SurroundingFrontLaser_device_frame:
-                        {}
-                      SurroundingFrontLaser_frame:
-                        {}
-                      SurroundingLeftLaser_device_frame:
-                        {}
-                      SurroundingLeftLaser_frame:
-                        {}
-                      SurroundingRightLaser_device_frame:
-                        {}
-                      SurroundingRightLaser_frame:
-                        {}
-                      VerticalLeftLaser_frame:
-                        {}
-                      VerticalRightLaser_frame:
-                        {}
-                      WheelB_link:
-                        {}
-                      WheelFL_link:
-                        {}
-                      WheelFR_link:
-                        {}
-                      base_footprint:
-                        {}
-                ImuTorsoAccelerometer_frame:
-                  {}
-                ImuTorsoGyrometer_frame:
-                  {}
-                LShoulder:
-                  LBicep:
-                    LElbow:
-                      LForeArm:
-                        l_wrist:
-                          LFinger11_link:
-                            LFinger12_link:
-                              LFinger13_link:
-                                {}
-                          LFinger21_link:
-                            LFinger22_link:
-                              LFinger23_link:
-                                {}
-                          LFinger31_link:
-                            LFinger32_link:
-                              LFinger33_link:
-                                {}
-                          LFinger41_link:
-                            LFinger42_link:
-                              LFinger43_link:
-                                {}
-                          LHandTouchBack_frame:
-                            {}
-                          LThumb1_link:
-                            LThumb2_link:
+        odom:
+          base_link:
+            torso:
+              ChestButton_frame:
+                {}
+              Hip:
+                Pelvis:
+                  Tibia:
+                    BumperB_frame:
+                      {}
+                    BumperFL_frame:
+                      {}
+                    BumperFR_frame:
+                      {}
+                    ImuBaseAccelerometer_frame:
+                      {}
+                    ImuBaseGyrometer_frame:
+                      {}
+                    ShovelLaser_frame:
+                      {}
+                    SonarBack_frame:
+                      {}
+                    SonarFront_frame:
+                      {}
+                    SurroundingFrontLaser_device_frame:
+                      {}
+                    SurroundingFrontLaser_frame:
+                      {}
+                    SurroundingLeftLaser_device_frame:
+                      {}
+                    SurroundingLeftLaser_frame:
+                      {}
+                    SurroundingRightLaser_device_frame:
+                      {}
+                    SurroundingRightLaser_frame:
+                      {}
+                    VerticalLeftLaser_frame:
+                      {}
+                    VerticalRightLaser_frame:
+                      {}
+                    WheelB_link:
+                      {}
+                    WheelFL_link:
+                      {}
+                    WheelFR_link:
+                      {}
+                    base_footprint:
+                      {}
+              ImuTorsoAccelerometer_frame:
+                {}
+              ImuTorsoGyrometer_frame:
+                {}
+              LShoulder:
+                LBicep:
+                  LElbow:
+                    LForeArm:
+                      l_wrist:
+                        LFinger11_link:
+                          LFinger12_link:
+                            LFinger13_link:
                               {}
-                          l_gripper:
-                            {}
-                Neck:
-                  Head:
-                    CameraBottom_frame:
-                      CameraBottom_optical_frame:
-                        {}
-                    CameraDepth_frame:
-                      CameraDepth_optical_frame:
-                        {}
-                    CameraTop_frame:
-                      CameraTop_optical_frame:
-                        {}
-                    HeadTouchFront_frame:
-                      {}
-                    HeadTouchMiddle_frame:
-                      {}
-                    HeadTouchRear_frame:
-                      {}
-                    LSpeaker_frame:
-                      {}
-                    RSpeaker_frame:
-                      {}
-                RShoulder:
-                  RBicep:
-                    RElbow:
-                      RForeArm:
-                        r_wrist:
-                          RFinger11_link:
-                            RFinger12_link:
-                              RFinger13_link:
-                                {}
-                          RFinger21_link:
-                            RFinger22_link:
-                              RFinger23_link:
-                                {}
-                          RFinger31_link:
-                            RFinger32_link:
-                              RFinger33_link:
-                                {}
-                          RFinger41_link:
-                            RFinger42_link:
-                              RFinger43_link:
-                                {}
-                          RHandTouchBack_frame:
-                            {}
-                          RThumb1_link:
-                            RThumb2_link:
+                        LFinger21_link:
+                          LFinger22_link:
+                            LFinger23_link:
                               {}
-                          r_gripper:
+                        LFinger31_link:
+                          LFinger32_link:
+                            LFinger33_link:
+                              {}
+                        LFinger41_link:
+                          LFinger42_link:
+                            LFinger43_link:
+                              {}
+                        LHandTouchBack_frame:
+                          {}
+                        LThumb1_link:
+                          LThumb2_link:
                             {}
-                Tablet_frame:
-                  {}
+                        l_gripper:
+                          {}
+              Neck:
+                Head:
+                  CameraBottom_frame:
+                    CameraBottom_optical_frame:
+                      {}
+                  CameraDepth_frame:
+                    CameraDepth_optical_frame:
+                      {}
+                  CameraTop_frame:
+                    CameraTop_optical_frame:
+                      {}
+                  HeadTouchFront_frame:
+                    {}
+                  HeadTouchMiddle_frame:
+                    {}
+                  HeadTouchRear_frame:
+                    {}
+                  LSpeaker_frame:
+                    {}
+                  RSpeaker_frame:
+                    {}
+              RShoulder:
+                RBicep:
+                  RElbow:
+                    RForeArm:
+                      r_wrist:
+                        RFinger11_link:
+                          RFinger12_link:
+                            RFinger13_link:
+                              {}
+                        RFinger21_link:
+                          RFinger22_link:
+                            RFinger23_link:
+                              {}
+                        RFinger31_link:
+                          RFinger32_link:
+                            RFinger33_link:
+                              {}
+                        RFinger41_link:
+                          RFinger42_link:
+                            RFinger43_link:
+                              {}
+                        RHandTouchBack_frame:
+                          {}
+                        RThumb1_link:
+                          RThumb2_link:
+                            {}
+                        r_gripper:
+                          {}
+              Tablet_frame:
+                {}
       Update Interval: 0
       Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
-        Max Value: 0.0023923132102936506
-        Min Value: -0.00045701436465606093
+        Max Value: 0
+        Min Value: 0
         Value: true
       Axis: Z
       Channel Name: intensity
@@ -928,7 +924,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -991,4 +987,4 @@ Window Geometry:
     collapsed: false
   Width: 1299
   X: 67
-  Y: 27
+  Y: 339
